@@ -1,11 +1,19 @@
 (ns softwarebears.handler
   (:require [compojure.core :refer :all]
             [compojure.route :as route]
-            [ring.middleware.defaults :refer [wrap-defaults site-defaults]]))
+            [ring.middleware.defaults :refer [wrap-defaults site-defaults]]
+            [softwarebears.views.layout :as layout]))
 
 (defroutes app-routes
-  (GET "/" [] "Hello World")
-  (route/not-found "Not Found"))
+  (route/resources "/")
+  (route/not-found (layout/common [:p "Not Found"])))
+
+(defroutes home-routes
+  (GET "/" [] (layout/common [:div.intro.headline.full.trnp.plax.plax1 [:p "Hello World"]])))
 
 (def app
-  (wrap-defaults app-routes site-defaults))
+  (wrap-defaults
+    (routes
+      home-routes
+      app-routes)
+    site-defaults))
