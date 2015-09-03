@@ -1,6 +1,6 @@
 (ns softwarebears.views.layout
   (:require [hiccup.page :refer [html5 include-css include-js]]
-            [hiccup.element :refer [link-to]]))
+            [hiccup.element :refer [link-to mail-to]]))
 
 (def title "Software Bears")
 (def phone "(716) 222 0088")
@@ -42,7 +42,7 @@
           "SOA, web services, Android apps &amp; SDKs," [:br]
           "web applications, and database design"]
         [:p
-          "Email: " (link-to (str "mailto:" email) email)  [:br]
+          "Email: " (mail-to email) [:br]
           (str "Tel: " phone) [:br]
           "Find us on "
           (link-to "https://github.com/cberes" "GitHub") ", "
