@@ -13,8 +13,11 @@
       (include-css "http://fonts.googleapis.com/css?family=Montserrat+Alternates:400,700")
       (include-css "/css/normalize.css")
       (include-css "/css/main.css")
+      (include-css "/css/highlight/default.css")
       (include-js "/js/jquery-1.11.3.min.js")
-      (include-js "/js/scroll.js")]
+      (include-js "/js/scroll.js")
+      (include-js "/js/highlight.pack.js")
+      [:script "hljs.configure({languages: []}); hljs.initHighlightingOnLoad();"]]
     [:body
       [:header
         [:h1.name

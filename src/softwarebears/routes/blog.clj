@@ -1,9 +1,17 @@
-(ns softwarebears.routes.home
+(ns softwarebears.routes.blog
   (:require [compojure.core :refer :all]
             [hiccup.element :refer [image link-to]]
+            [softwarebears.util.markdown :as md]
             [softwarebears.views.layout :as layout]))
 
-(defn home []
+(defn blog-item [markup]
+  (layout/common
+    [:div.intro.full.black
+      [:p.middle [:span.name [:span "Software"] [:span "Bears"] ".com"]]]
+    [:main.blog
+      [:section#blog-item.white markup]]))
+
+(defn blog []
   (layout/common
     [:div.intro.headline.full.trnp.plax.plax1
       [:p "Some big text about me and what I can do, and why that's great for you."]]
@@ -41,11 +49,12 @@
             [:em "interesting"]
             " at all. But I have questions, and now I want answers. This feels like a good opportunity to use "
             (link-to "http://clojure.org/" "Clojure") "!"]
-        [:h4 (link-to "/blog/2015-08-31_counties" "Read more &gt;&gt;&gt;")]]
+        [:h4 (link-to "/blog" "Read more &gt;&gt;&gt;")]]
       [:section.white.slant-bottom-post
         [:h2 "Contact me"]
         [:p "Email me or call me about a project, or just to ask a question."]
         [:p (link-to {:class "button"} "/contact" "Say hi")]]]))
 
-(defroutes home-routes
-  (GET "/" [] (home)))
+(defroutes blog-routes
+  (GET "/blog/:f" [f] (blog-item (md/render f)))
+  (GET "/blog" [] (blog)))

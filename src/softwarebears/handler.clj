@@ -4,6 +4,7 @@
             [ring.middleware.defaults :refer [wrap-defaults site-defaults]]
             [softwarebears.routes.home :refer [home-routes]]
             [softwarebears.routes.portfolio :refer [portfolio-routes]]
+            [softwarebears.routes.blog :refer [blog-routes]]
             [softwarebears.routes.error :refer [error-routes]]))
 
 (defroutes app-routes
@@ -14,6 +15,7 @@
     (routes
       home-routes
       portfolio-routes
+      blog-routes
       app-routes
       error-routes)
     site-defaults))
