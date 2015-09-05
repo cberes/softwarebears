@@ -402,3 +402,31 @@ color: #000000;
 -moz-transition: color 0.3s;
 transition: color 0.3s;
 }
+form.simple label, form.simple input[type=submit] {
+margin-top: 1em;
+}
+form.simple label, form.simple input, form.simple textarea {
+display: block;
+}
+form.simple input[type=text], form.simple textarea {
+display: block;
+width: 97%;
+padding: 1%;
+}
+form.simple table input[type=text], form.simple table textarea {
+width: 94%;
+padding: 2%;
+}
+form.simple table {
+width: 100%;
+}
+form.simple table th {
+text-align: left;
+font-weight: normal;
+}
+.success {
+color: green;
+}
+.error {
+color: red;
+}
