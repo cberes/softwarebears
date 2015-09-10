@@ -1,6 +1,6 @@
 ## Most popular county names in America
 
-![Chart of most popular county names versus frequency](img/county_chart.png "Chart of most popular county names versus frequency")
+![Chart of most popular county names versus frequency](/blog/img/county_chart.png "Chart of most popular county names versus frequency")
 
 Lately I've been curious about the names of our counties. I live in Erie County. Are there other Erie Counties? What's the most popular name for a county? Is Erie a popular name? What about Buffalo ... as few years back, there was some talk about changing Erie County's name to Buffalo.
 

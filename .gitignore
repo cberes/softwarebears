@@ -8,3 +8,17 @@ pom.xml.asc
 *.class
 /.lein-*
 /.nrepl-port
+/bin/
+
+# temporary files 
+tmp/
+*.swp
+*.bak
+*.tmp
+
+# Eclipse
+.project
+.externalToolBuilders/
+*.launch
+.classpath
+.settings/

@@ -97,9 +97,9 @@
       [:section.white
         [:p "Please take a look at these samples from my public work. In addition, I have ten years of professional experience as a software engineer and web developer."]]
       (alsi)
-      [:div.divider.trnp.plax.plax2 ]
+      [:div.divider.trnp.plax.plax2]
       (siol)
-      [:div.divider.trnp.plax.plax2 ]
+      [:div.divider.trnp.plax.plax2]
       (funner-summer)]))
 
 (defroutes portfolio-routes
