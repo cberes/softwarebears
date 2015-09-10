@@ -23,7 +23,6 @@
     (link-to (str "/blog/" (subs n 0 (- (count n) 3))) "Read more &gt;&gt;&gt;")))
 
 (defn blog []
-  (println (get-blog-items))
   (layout/common
     [:div.intro.headline.half.trnp.plax.plax1
       [:p "Welcome to my sweet blog."]]
