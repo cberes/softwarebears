@@ -190,7 +190,7 @@ width: 25%;
 margin: 1em 5% 1em 0;
 float: left;
 }
-img.main {
+img.main, .blog-imgs img {
 width: 95%;
 margin: 0 2.5%;
 }

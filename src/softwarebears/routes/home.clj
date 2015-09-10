@@ -1,6 +1,7 @@
 (ns softwarebears.routes.home
   (:require [compojure.core :refer :all]
             [hiccup.element :refer [image link-to]]
+            [softwarebears.routes.blog :refer [latest-blog-item]]
             [softwarebears.views.layout :as layout]))
 
 (defn home []
@@ -31,17 +32,9 @@
           [:blockquote
             "It was so great working with Corey, because he is a genius."
             [:footer [:cite "So and so"]]]]]
-      [:section.grey.slant-bottom.from-left
+      [:section.grey.slant-bottom.from-left.blog-imgs
         [:h2 "Latest blog post"]
-        [:h3 "Most popular county names in America"]
-        [:figure
-          (image {:class "main" :style "max-width:561px;"} "/blog/img/county_chart.png" "Chart of most popular county names versus frequency")]
-        [:p "Lately I've been curious about the names of our counties. I live in Erie County. Are there other Erie Counties? What's the most popular name for a county? Is Erie a popular name? What about Buffalo ... as few years back, there was some talk about changing Erie County's name to Buffalo."]
-        [:p "Okay, it's not the most interesting topic. Heck, it's probably not "
-            [:em "interesting"]
-            " at all. But I have questions, and now I want answers. This feels like a good opportunity to use "
-            (link-to "http://clojure.org/" "Clojure") "!"]
-        [:h4 (link-to "/blog/2015-08-31_counties" "Read more &gt;&gt;&gt;")]]
+        (latest-blog-item)]
       [:section.white.slant-bottom-post
         [:h2 "Contact me"]
         [:p "Email me or call me about a project, or just to ask a question."]

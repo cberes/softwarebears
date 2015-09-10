@@ -36,6 +36,10 @@
           concat
           (map #(seq [[:section.white (md/preview %) [:h4 (read-more-link %)]] [:div.divider.trnp.plax.plax2]]) (get-blog-items))))]))
 
+(defn latest-blog-item []
+  (let [f (first (get-blog-items))]
+    (seq [(md/preview f "#") [:h4 (read-more-link f)]])))
+
 (defroutes blog-routes
   (GET "/blog/:f" [f] (blog-item (md/render (get-file f))))
   (GET "/blog" [] (blog)))
