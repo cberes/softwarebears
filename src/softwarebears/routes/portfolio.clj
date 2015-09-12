@@ -92,7 +92,7 @@
 (defn portfolio []
   (layout/common
     [:div.intro.headline.full.trnp.plax.plax1
-      [:p.middle "Here's a portfolio of all the sweet stuff I did."]]
+      [:p.middle "We helped these clients solve their problems. We can help you next."]]
     [:main
       [:section.white
         [:p "Please take a look at these samples from my public work. In addition, I have ten years of professional experience as a software engineer and web developer."]]

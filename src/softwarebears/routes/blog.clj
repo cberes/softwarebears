@@ -25,7 +25,7 @@
 (defn blog []
   (layout/common
     [:div.intro.headline.full.trnp.plax.plax1
-      [:p "Welcome to my sweet blog."]]
+      [:p "Writing about technology from an engineer's point of view."]]
     [:main.blog
       ; the map call returns a lazy sequence of sequences of elements
       ; so reduce to a single sequence with concat

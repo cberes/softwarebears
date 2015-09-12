@@ -47,7 +47,7 @@
 (defn home []
   (layout/common
     [:div.intro.headline.full.trnp.plax.plax1
-      [:p "Some big text about me and what I can do, and why that's great for you."]]
+      [:p "We're full-stack software engineers who are ready to help <em>you</em>."]]
     [:main
       (latest-project1)
       (latest-project2)
