@@ -32,11 +32,11 @@
       body
       [:footer.black
         [:h2
-          "Want to see more? Check out my "
+          "Want to see more? View our "
           (link-to "/portfolio" "portfolio")
-          ", read my "
+          ", read our "
           (link-to "/blog" "blog")
-          ", or fork my GitHub "
+          ", or check out our GitHub "
           (link-to "https://github.com/cberes" "repos")
           "."]
         [:p
