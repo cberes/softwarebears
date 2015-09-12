@@ -24,7 +24,7 @@
 
 (defn blog []
   (layout/common
-    [:div.intro.headline.half.trnp.plax.plax1
+    [:div.intro.headline.full.trnp.plax.plax1
       [:p "Welcome to my sweet blog."]]
     [:main.blog
       ; the map call returns a lazy sequence of sequences of elements

@@ -3,7 +3,7 @@
             [compojure.core :refer :all]
             [ring.middleware.anti-forgery :refer [*anti-forgery-token*]]
             [hiccup.element :refer [image link-to mail-to]]
-            [hiccup.form :refer [form-to label text-area text-field file-upload hidden-field check-box submit-button]]
+            [hiccup.form :refer [form-to label email-field text-area text-field file-upload hidden-field check-box submit-button]]
             [noir.validation :refer [rule errors? has-value? is-email? matches-regex? not-nil? on-error]]
             [postal.core :refer [send-message]]
             [softwarebears.views.layout :as layout]))
@@ -23,10 +23,10 @@
 
 (defn contact [& [result result-class fname lname email message]]
   (layout/common
-    [:div.intro.headline.half.trnp.plax.plax1
-      [:p "I want to her about your project."]]
+    [:div.intro.headline.full.trnp.plax.plax1
+      [:p "We want to hear about your project."]]
     [:main
-      [:section.white
+      [:section.colory.white
         [:h2 "Contact us"]
         [:h3 "Add us to your contacts"]
         [:table
@@ -53,7 +53,7 @@
             ; email address
             (label :email "Email address")
             [:div.error (on-error :email first)]
-            (text-field {:maxlength 250} :email email)
+            (email-field {:maxlength 250} :email email)
             ; email message
             (label :message "Tell us about your project")
             [:div.error (on-error :message first)]

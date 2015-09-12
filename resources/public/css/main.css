@@ -78,11 +78,11 @@ color: #FFFFFF;
 background-color: #000000;
 color: #FFFFFF;
 }
-.colorful {
+.colorful, .colory {
 margin: 0;
 padding: 0 0 1em;
 }
-.colorful h2 {
+.colorful h2, .colory h2 {
 width: 100%;
 max-width: 100%;
 margin: 0;
@@ -91,6 +91,9 @@ text-align: center;
 }
 .colorful h3 {
 margin: 2em auto 1em;
+}
+.colory h3 {
+margin: 1em auto;
 }
 .colorful figure {
 text-align: center;
@@ -109,6 +112,12 @@ font-weight: bold;
 }
 .colorful a:visited {
 color: #DDDDDD;
+}
+.colory.white {
+background-color: #FFFFFF;
+}
+.colory.white h2 {
+background-color: #222222;
 }
 .purple {
 background-color: #6a1b9a;
@@ -321,29 +330,6 @@ color: #607D8B;
 nav a, nav a:link, nav a:visited, nav a:hover, nav a:active {
 color: #000000;
 }
-/* widgets */
-a.button {
-display: inline-block;
-padding: 0.5em 1em;
-border: 2px solid #000000;
-border-radius: 0.5em;
-text-transform: uppercase;
-font-weight: bold;
-background-color: rgba(0,0,0,0.0);
--webkit-transition: background-color 0.9s;
--moz-transition: background-color 0.9s;
-transition: background-color 0.9s;
-}
-a.button, a.button:link, a.button:visited, a.button:hover, a.button:active {
-color: #000000;
-text-decoration: none;
-}
-a.button:hover {
-background-color: rgba(33,150,243,0.25);
--webkit-transition: background-color 0.9s;
--moz-transition: background-color 0.9s;
-transition: background-color 0.9s;
-}
 blockquote footer:before {
 content: "\2014"
 }
@@ -415,18 +401,57 @@ color: #000000;
 -moz-transition: color 0.3s;
 transition: color 0.3s;
 }
+form.simple input[type=submit], a.button {
+display: inline-block;
+text-decoration: none;
+border-radius: 3px;
+background: #FFFFFF;
+color: #000000;
+padding: 0.75em 1em;
+font-family: "Trebuchet MS", Helvetica, sans-serif;
+text-transform: uppercase;
+font-weight: bold;
+}
+form.simple input[type=submit], a.button:link, a.button:visited {
+border: thin solid #DDDDDD;
+-webkit-transition: border 0.5s;
+-moz-transition: border 0.5s;
+transition: border 0.5s;
+}
+form.simple input[type=submit]:hover, a.button:hover, a.button:active {
+border: thin solid #222222;
+-webkit-transition: border 0.5s;
+-moz-transition: border 0.5s;
+transition: border 0.5s;
+}
 form.simple label, form.simple input[type=submit] {
 margin-top: 1em;
 }
 form.simple label, form.simple input, form.simple textarea {
 display: block;
 }
-form.simple input[type=text], form.simple textarea {
+form.simple input[type=text], form.simple input[type=email], form.simple textarea {
 display: block;
 width: 97%;
 padding: 1%;
+border: thin solid #DDDDDD;
+border-radius: 3px;
+background: #FFFFFF;
+font-family: "Lucida Console", Monaco, monospace;
 }
-form.simple table input[type=text], form.simple table textarea {
+form.simple input[type=text], form.simple input[type=email], form.simple textarea {
+border: thin solid #DDDDDD;
+-webkit-transition: border 0.5s;
+-moz-transition: border 0.5s;
+transition: border 0.5s;
+}
+form.simple input[type=text]:focus, form.simple input[type=email]:focus, form.simple textarea:focus {
+border: thin solid #222222;
+-webkit-transition: border 0.5s;
+-moz-transition: border 0.5s;
+transition: border 0.5s;
+}
+form.simple table input[type=text], form.simple table input[type=email], form.simple table textarea {
 width: 94%;
 padding: 2%;
 }
