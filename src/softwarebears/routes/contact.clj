@@ -57,7 +57,7 @@
             ; email message
             (label :message "Tell us about your project")
             [:div.error (on-error :message first)]
-            (text-area {:maxlength 2000} :message message)
+            (text-area {:maxlength 2000 :rows 10} :message message)
             ; submit button
             (submit-button "Send"))]]))
 

@@ -190,6 +190,12 @@ width: 25%;
 margin: 1em 5% 1em 0;
 float: left;
 }
+img.who {
+max-width; 200px;
+width: 25%;
+margin: 0 5% 0 0;
+float: left;
+}
 img.main, .blog-imgs img {
 width: 95%;
 margin: 0 2.5%;
@@ -262,6 +268,7 @@ top: 0;
 bottom: 0;
 left:0;
 right:0;
+z-index: -1;
 }
 .plax, .plax:before {
 background: 50% 50% / cover;
@@ -341,8 +348,14 @@ blockquote footer:before {
 content: "\2014"
 }
 blockquote footer {
+margin: 1em 1em 0;
 text-align: right;
 font-style: italic;
+}
+blockquote footer a, blockquote footer a:link, blockquote footer a:visited, blockquote footer a:hover, blockquote footer a:active {
+color: #FFFFFF;
+font-weight: bold;
+font-style: normal;
 }
 .name {
 font-family: 'Montserrat Alternates', Helvetica, sans-serif;
