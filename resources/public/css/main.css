@@ -418,7 +418,7 @@ border: thin solid #DDDDDD;
 -moz-transition: border 0.5s;
 transition: border 0.5s;
 }
-form.simple input[type=submit]:hover, a.button:hover, a.button:active {
+form.simple input[type=submit]:hover, form.simple input[type=submit]:focus, a.button:hover, a.button:active {
 border: thin solid #222222;
 -webkit-transition: border 0.5s;
 -moz-transition: border 0.5s;
