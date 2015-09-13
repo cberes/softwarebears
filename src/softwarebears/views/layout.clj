@@ -15,7 +15,7 @@
       (include-css "/css/main.css")
       (include-css "/css/highlight/default.css")
       (include-js "/js/jquery-1.11.3.min.js")
-      (include-js "/js/scroll.js")
+      (include-js "/js/main.js")
       (include-js "/js/highlight.pack.js")
       [:script "hljs.configure({languages: []}); hljs.initHighlightingOnLoad();"]]
     [:body

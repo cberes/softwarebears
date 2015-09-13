@@ -12,7 +12,7 @@
       [:figure
         (link-to "/img/alsi_new.png" (image "/img/alsi_new.png" "Screenshot of www.alsi.org"))]]
     [:h4#alsi-less
-      (link-to {:onclick "return readMore(this, 'alsi-more');"} "#" "Read more &gt;&gt;&gt;")]
+      (link-to {:onclick "return softwarebears.readmore.read_more(this, 'alsi-more');"} "#" "Read more &gt;&gt;&gt;")]
     [:div#alsi-more
       {:style "display:none;"}
       [:p "This replaced a website that looked dated, having been designed in 2006."]
@@ -33,7 +33,7 @@
       [:p [:strong "PHP"] " was used for a template that simplified each page's markup. Version 5.3 was used because of ALSI's server's limitations. PHP was also used for custom CMS, alongside " [:strong "MySQL"] " as the database for event storage. " [:strong "HTML 5"] " and " [:strong "CSS 3"] " were used for the design. " [:strong "JavaScript"] " was used to make certain elements of the design interactive. " [:strong "Git"] " is used for source code management."]
       [:h3 "Take a look"]
       [:p "ALSI's new website is live at " (link-to "http://alsi.org/" "alsi.org") "."]
-      [:h4 (link-to {:onclick "return showLess('alsi-more', 'alsi-less');"} "#" "Show less &gt;&gt;&gt;")]]])
+      [:h4 (link-to {:onclick "softwarebears.readmore.show_less('alsi-more', 'alsi-less');"} "#alsi" "Show less &gt;&gt;&gt;")]]])
 
 (defn siol []
   [:section.colorful.teal
@@ -44,7 +44,7 @@
       [:figure
         (link-to "/img/siol_main.png" (image "/img/siol_main.png" "7 items or less home page"))]]
     [:h4#siol-less
-      (link-to {:onclick "return readMore(this, 'siol-more');"} "#" "Read more &gt;&gt;&gt;")]
+      (link-to {:onclick "return softwarebears.readmore.read_more(this, 'siol-more');"} "#" "Read more &gt;&gt;&gt;")]
     [:div#siol-more
       {:style "display:none;"}
       [:p "Also, you can follow or un-follow anyone you want, because following is completely anonymous. Of course, for the sake of privacy, you can choose to approve who follows you, if you wish."]
@@ -57,7 +57,7 @@
       [:p "The website was written in " [:strong "Clojure 1.6"] " with use of the " [:strong "Ring"] ", " [:strong "Compojure"] ", and " [:strong "lib-noir"] " libraries. The " [:strong "Hiccup"] " library was used to write the HTML. The latest " [:strong "CSS 3"] " features were used for the design. All posts and user info was stored with " [:strong "PostgreSQL 9.x"] ". " [:strong "JavaScript"] " was used for asynchronous requests, such as comments and users follows. " [:strong "Leiningen"] " is used to manage builds. " [:strong "Git"] " is used for source code management."]
       [:h3 "Take a look"]
       [:p [:em "7 items or less"] " is live at " (link-to "http://7itemsorless.today/" "7itemsorless.today") "."]
-      [:h4 (link-to {:onclick "return showLess('siol-more', 'siol-less');"} "#" "Show less &gt;&gt;&gt;")]]])
+      [:h4 (link-to {:onclick "softwarebears.readmore.show_less('siol-more', 'siol-less');"} "#siol" "Show less &gt;&gt;&gt;")]]])
 
 (defn funner-summer []
   [:section.colorful.green
@@ -68,7 +68,7 @@
       [:figure
         (link-to "/img/funner_main.png" (image "/img/funner_main.png" "Funner Summer home screen"))]]
     [:h4#fs-less
-      (link-to {:onclick "return readMore(this, 'fs-more');"} "#" "Read more &gt;&gt;&gt;")]
+      (link-to {:onclick "return softwarebears.readmore.read_more(this, 'fs-more');"} "#" "Read more &gt;&gt;&gt;")]
     [:div#fs-more
       {:style "display:none;"}
       [:h3 "Hundreds of pre-loaded activities"]
@@ -87,7 +87,7 @@
       [:p "The Android app targeted " [:strong "Android 4.1"] " and above. The app and web service were both written in " [:strong "Java 1.7"] ". Android's " [:strong "SQLite"] " database was used to store a user's activity history. The web service is a REST API, and it uses " [:strong "Jersey 2.x"] "'s JAX-RS implementation. The web service is hosted on " [:strong "Amazon EC2"] ". " [:strong "Maven 3"] " was used to manage builds. " [:strong "Git"] " is used for source code management."]
       [:h3 "Take a look"]
       [:p "Funner Summer is available in the " (link-to "https://play.google.com/store/apps/details?id=net.seabears.funner.summer" "Google play store") "."]
-      [:h4 (link-to {:onclick "return showLess('fs-more', 'fs-less');"} "#" "Show less &gt;&gt;&gt;")]]])
+      [:h4 (link-to {:onclick "softwarebears.readmore.show_less('fs-more', 'fs-less');"} "#fs" "Show less &gt;&gt;&gt;")]]])
 
 (defn portfolio []
   (layout/common
