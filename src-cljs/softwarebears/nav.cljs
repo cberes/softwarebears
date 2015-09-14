@@ -1,23 +1,21 @@
-(ns softwarebears.nav)
+(ns softwarebears.nav
+  (:require [clojure.string :refer [blank?]]
+            [softwarebears.classic :as classes]))
 
-(defn nav-body []
-  (.querySelector js/document "body > nav ul"))
+(def class-name "expanded")
 
-(defn nav-toggle []
-  (.getElementById js/document "show-nav"))
+(defn nav-element []
+  (.querySelector js/document "body > nav"))
 
-(defn show [nav-ul nav-div]
-  (set! (.-display (.-style nav-ul)) "block")
-  (set! (.-innerHTML nav-div) "X")
-  false)
+(defn show [element]
+  (classes/add! element class-name))
 
-(defn hide [nav-ul nav-div]
-  (set! (.-display (.-style nav-ul)) "none")
-  (set! (.-innerHTML nav-div) "&#9776;")
-  false)
+(defn hide [element]
+  (classes/remove! element class-name))
 
 (defn ^:export toggle []
-  (let [nav-ul (nav-body) nav-div (nav-toggle)]
-    (if (= (.-display (.-style nav-ul)) "none")
-      (show nav-ul nav-div)
-      (hide nav-ul nav-div))))
+  (let [element (nav-element)]
+    (if (classes/has-class? element class-name)
+      (hide element)
+      (show element)))
+  false)

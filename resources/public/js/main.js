@@ -29838,48 +29838,6 @@ cljs.core.find_macros_ns = function cljs$core$find_macros_ns(ns) {
 cljs.core.ns_name = function cljs$core$ns_name(ns_obj) {
   return ns_obj.name;
 };
-goog.provide("softwarebears.readmore");
-goog.require("cljs.core");
-softwarebears.readmore.read_more = function softwarebears$readmore$read_more(element, id_more) {
-  document.getElementById(id_more).style.display = "block";
-  element.parentNode.style.display = "none";
-  return false;
-};
-goog.exportSymbol("softwarebears.readmore.read_more", softwarebears.readmore.read_more);
-softwarebears.readmore.show_less = function softwarebears$readmore$show_less(id_more, id_less) {
-  document.getElementById(id_more).style.display = "none";
-  document.getElementById(id_less).style.display = "block";
-  return false;
-};
-goog.exportSymbol("softwarebears.readmore.show_less", softwarebears.readmore.show_less);
-goog.provide("softwarebears.nav");
-goog.require("cljs.core");
-softwarebears.nav.nav_body = function softwarebears$nav$nav_body() {
-  return document.querySelector("body \x3e nav ul");
-};
-softwarebears.nav.nav_toggle = function softwarebears$nav$nav_toggle() {
-  return document.getElementById("show-nav");
-};
-softwarebears.nav.show = function softwarebears$nav$show(nav_ul, nav_div) {
-  nav_ul.style.display = "block";
-  nav_div.innerHTML = "X";
-  return false;
-};
-softwarebears.nav.hide = function softwarebears$nav$hide(nav_ul, nav_div) {
-  nav_ul.style.display = "none";
-  nav_div.innerHTML = "\x26#9776;";
-  return false;
-};
-softwarebears.nav.toggle = function softwarebears$nav$toggle() {
-  var nav_ul = softwarebears.nav.nav_body.call(null);
-  var nav_div = softwarebears.nav.nav_toggle.call(null);
-  if (cljs.core._EQ_.call(null, nav_ul.style.display, "none")) {
-    return softwarebears.nav.show.call(null, nav_ul, nav_div);
-  } else {
-    return softwarebears.nav.hide.call(null, nav_ul, nav_div);
-  }
-};
-goog.exportSymbol("softwarebears.nav.toggle", softwarebears.nav.toggle);
 goog.provide("clojure.string");
 goog.require("cljs.core");
 goog.require("goog.string");
@@ -30133,30 +30091,78 @@ clojure.string.escape = function clojure$string$escape(s, cmap) {
     break;
   }
 };
-goog.provide("softwarebears.scroll");
+goog.provide("softwarebears.classic");
 goog.require("cljs.core");
 goog.require("clojure.string");
+softwarebears.classic.class_pattern = function softwarebears$classic$class_pattern(class_name) {
+  return cljs.core.re_pattern.call(null, [cljs.core.str("(?i)\\s*\\b"), cljs.core.str(class_name), cljs.core.str("\\b")].join(""));
+};
+softwarebears.classic.has_class_QMARK_ = function softwarebears$classic$has_class_QMARK_(e, class_name) {
+  return cljs.core.re_matches.call(null, softwarebears.classic.class_pattern.call(null, class_name), e.className);
+};
+softwarebears.classic.add_BANG_ = function softwarebears$classic$add_BANG_(e, class_name) {
+  if (cljs.core.truth_(softwarebears.classic.has_class_QMARK_.call(null, e, class_name))) {
+    return null;
+  } else {
+    return e.className = [cljs.core.str(e.className), cljs.core.str(" "), cljs.core.str(class_name)].join("");
+  }
+};
+softwarebears.classic.remove_BANG_ = function softwarebears$classic$remove_BANG_(e, class_name) {
+  return e.className = clojure.string.replace.call(null, e.className, softwarebears.classic.class_pattern.call(null, class_name), "");
+};
+goog.provide("softwarebears.nav");
+goog.require("cljs.core");
+goog.require("clojure.string");
+goog.require("softwarebears.classic");
+softwarebears.nav.class_name = "expanded";
+softwarebears.nav.nav_element = function softwarebears$nav$nav_element() {
+  return document.querySelector("body \x3e nav");
+};
+softwarebears.nav.show = function softwarebears$nav$show(element) {
+  return softwarebears.classic.add_BANG_.call(null, element, softwarebears.nav.class_name);
+};
+softwarebears.nav.hide = function softwarebears$nav$hide(element) {
+  return softwarebears.classic.remove_BANG_.call(null, element, softwarebears.nav.class_name);
+};
+softwarebears.nav.toggle = function softwarebears$nav$toggle() {
+  var element_6738 = softwarebears.nav.nav_element.call(null);
+  if (cljs.core.truth_(softwarebears.classic.has_class_QMARK_.call(null, element_6738, softwarebears.nav.class_name))) {
+    softwarebears.nav.hide.call(null, element_6738);
+  } else {
+    softwarebears.nav.show.call(null, element_6738);
+  }
+  return false;
+};
+goog.exportSymbol("softwarebears.nav.toggle", softwarebears.nav.toggle);
+goog.provide("softwarebears.scroll");
+goog.require("cljs.core");
+goog.require("softwarebears.classic");
 softwarebears.scroll.detach_header_px = 300;
 softwarebears.scroll.detach_class_name = "detached";
 softwarebears.scroll.current_scroll = function softwarebears$scroll$current_scroll() {
   return window.pageYOffset;
 };
-softwarebears.scroll.add_class_BANG_ = function softwarebears$scroll$add_class_BANG_(e, class_name) {
-  var class_list = e.className;
-  return e.className = [cljs.core.str(class_list), cljs.core.str(" "), cljs.core.str(class_name)].join("");
-};
-softwarebears.scroll.del_class_BANG_ = function softwarebears$scroll$del_class_BANG_(e, class_name) {
-  var class_list = e.className;
-  var pattern = cljs.core.re_pattern.call(null, [cljs.core.str("(?i)\\s*\\b"), cljs.core.str(class_name), cljs.core.str("\\b")].join(""));
-  return e.className = clojure.string.replace.call(null, class_list, pattern, "");
-};
 softwarebears.scroll.animate_header = function softwarebears$scroll$animate_header(evt) {
   if (softwarebears.scroll.current_scroll.call(null) >= softwarebears.scroll.detach_header_px) {
-    softwarebears.scroll.add_class_BANG_.call(null, document.querySelector("body \x3e header"), softwarebears.scroll.detach_class_name);
-    return softwarebears.scroll.add_class_BANG_.call(null, document.querySelector("body \x3e nav"), softwarebears.scroll.detach_class_name);
+    softwarebears.classic.add_BANG_.call(null, document.querySelector("body \x3e header"), softwarebears.scroll.detach_class_name);
+    return softwarebears.classic.add_BANG_.call(null, document.querySelector("body \x3e nav"), softwarebears.scroll.detach_class_name);
   } else {
-    softwarebears.scroll.del_class_BANG_.call(null, document.querySelector("body \x3e header"), softwarebears.scroll.detach_class_name);
-    return softwarebears.scroll.del_class_BANG_.call(null, document.querySelector("body \x3e nav"), softwarebears.scroll.detach_class_name);
+    softwarebears.classic.remove_BANG_.call(null, document.querySelector("body \x3e header"), softwarebears.scroll.detach_class_name);
+    return softwarebears.classic.remove_BANG_.call(null, document.querySelector("body \x3e nav"), softwarebears.scroll.detach_class_name);
   }
 };
 window.addEventListener("scroll", softwarebears.scroll.animate_header);
+goog.provide("softwarebears.readmore");
+goog.require("cljs.core");
+softwarebears.readmore.read_more = function softwarebears$readmore$read_more(element, id_more) {
+  document.getElementById(id_more).style.display = "block";
+  element.parentNode.style.display = "none";
+  return false;
+};
+goog.exportSymbol("softwarebears.readmore.read_more", softwarebears.readmore.read_more);
+softwarebears.readmore.show_less = function softwarebears$readmore$show_less(id_more, id_less) {
+  document.getElementById(id_more).style.display = "none";
+  document.getElementById(id_less).style.display = "block";
+  return false;
+};
+goog.exportSymbol("softwarebears.readmore.show_less", softwarebears.readmore.show_less);

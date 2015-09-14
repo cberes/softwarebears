@@ -331,7 +331,7 @@ nav a, nav a:link, nav a:visited, nav a:hover, nav a:active {
 color: #000000;
 }
 blockquote footer:before {
-content: "\2014"
+content: "\2014";
 }
 blockquote footer {
 margin: 1em 1em 0;
@@ -476,10 +476,20 @@ display: none;
 text-align: right;
 padding: 0;
 line-height: 1;
+cursor: pointer;
+}
+#show-nav:before {
+content: "\2630";
 }
 /* small screens */
-@media screen and (max-device-width: 800px) {
+@media screen and (max-width: 800px), screen and (max-device-width: 800px) {
   #show-nav {
+  display: block;
+  }
+  .expanded #show-nav:before {
+  content: "X";
+  }
+  body > nav.expanded ul {
   display: block;
   }
   body > nav {
