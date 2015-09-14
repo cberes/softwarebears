@@ -291,7 +291,7 @@ background-image: url("../img/photo2.jpg");
 background-attachment: fixed;
 }
 /* headers */
-h1 {
+h1, #show-nav {
 font-size: 2em;
 }
 h2, h3, h4 {
@@ -365,13 +365,13 @@ background-color: rgba(255, 255, 255, 1.0);
 -moz-transition: all 0.3s;
 transition: all 0.3s;
 }
-h1 {
+h1, #show-nav {
 margin: 0.5em 1em;
 -webkit-transition: margin 0.3s;
 -moz-transition: margin 0.3s;
 transition: margin 0.3s;
 }
-header.detached h1 {
+header.detached h1, .detached #show-nav {
 margin: 0.1em 1em;
 -webkit-transition: margin 0.3s;
 -moz-transition: margin 0.3s;
@@ -467,4 +467,42 @@ color: green;
 }
 .error {
 color: red;
+}
+#close {
+display: none;
+}
+#show-nav {
+display: none;
+text-align: right;
+padding: 0;
+line-height: 1;
+}
+/* small screens */
+@media screen and (max-device-width: 800px) {
+  #show-nav {
+  display: block;
+  }
+  body > nav {
+  width: 100%;
+  }
+  body > nav ul {
+  background-color: rgba(0, 0, 0, 0.9);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: none;
+  }
+  body > nav ul li {
+  display: block;
+  font-size: 3em;
+  border-bottom: thin solid rgba(255, 255, 255, 0.9);
+  padding: 0.5em 1em;
+  margin: 0;
+  }
+  body > nav ul li a {
+  display: block;
+  }
+  body > nav ul li a, body > nav ul li a:link, body > nav ul li a:visited, body > nav ul li a:hover, body > nav ul li a:active {
+  color: #FFFFFF;
+  }
 }

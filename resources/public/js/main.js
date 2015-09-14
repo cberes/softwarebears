@@ -29838,6 +29838,48 @@ cljs.core.find_macros_ns = function cljs$core$find_macros_ns(ns) {
 cljs.core.ns_name = function cljs$core$ns_name(ns_obj) {
   return ns_obj.name;
 };
+goog.provide("softwarebears.readmore");
+goog.require("cljs.core");
+softwarebears.readmore.read_more = function softwarebears$readmore$read_more(element, id_more) {
+  document.getElementById(id_more).style.display = "block";
+  element.parentNode.style.display = "none";
+  return false;
+};
+goog.exportSymbol("softwarebears.readmore.read_more", softwarebears.readmore.read_more);
+softwarebears.readmore.show_less = function softwarebears$readmore$show_less(id_more, id_less) {
+  document.getElementById(id_more).style.display = "none";
+  document.getElementById(id_less).style.display = "block";
+  return false;
+};
+goog.exportSymbol("softwarebears.readmore.show_less", softwarebears.readmore.show_less);
+goog.provide("softwarebears.nav");
+goog.require("cljs.core");
+softwarebears.nav.nav_body = function softwarebears$nav$nav_body() {
+  return document.querySelector("body \x3e nav ul");
+};
+softwarebears.nav.nav_toggle = function softwarebears$nav$nav_toggle() {
+  return document.getElementById("show-nav");
+};
+softwarebears.nav.show = function softwarebears$nav$show(nav_ul, nav_div) {
+  nav_ul.style.display = "block";
+  nav_div.innerHTML = "X";
+  return false;
+};
+softwarebears.nav.hide = function softwarebears$nav$hide(nav_ul, nav_div) {
+  nav_ul.style.display = "none";
+  nav_div.innerHTML = "\x26#9776;";
+  return false;
+};
+softwarebears.nav.toggle = function softwarebears$nav$toggle() {
+  var nav_ul = softwarebears.nav.nav_body.call(null);
+  var nav_div = softwarebears.nav.nav_toggle.call(null);
+  if (cljs.core._EQ_.call(null, nav_ul.style.display, "none")) {
+    return softwarebears.nav.show.call(null, nav_ul, nav_div);
+  } else {
+    return softwarebears.nav.hide.call(null, nav_ul, nav_div);
+  }
+};
+goog.exportSymbol("softwarebears.nav.toggle", softwarebears.nav.toggle);
 goog.provide("clojure.string");
 goog.require("cljs.core");
 goog.require("goog.string");
@@ -30118,17 +30160,3 @@ softwarebears.scroll.animate_header = function softwarebears$scroll$animate_head
   }
 };
 window.addEventListener("scroll", softwarebears.scroll.animate_header);
-goog.provide("softwarebears.readmore");
-goog.require("cljs.core");
-softwarebears.readmore.read_more = function softwarebears$readmore$read_more(element, id_more) {
-  document.getElementById(id_more).style.display = "block";
-  element.parentNode.style.display = "none";
-  return false;
-};
-goog.exportSymbol("softwarebears.readmore.read_more", softwarebears.readmore.read_more);
-softwarebears.readmore.show_less = function softwarebears$readmore$show_less(id_more, id_less) {
-  document.getElementById(id_more).style.display = "none";
-  document.getElementById(id_less).style.display = "block";
-  return false;
-};
-goog.exportSymbol("softwarebears.readmore.show_less", softwarebears.readmore.show_less);
