@@ -16,7 +16,7 @@
       [:section#blog-item.white markup]]))
 
 (defn get-blog-items []
-  (remove #(.isDirectory %) (file-seq (io/file (io/resource "blog")))))
+  (remove #(.isDirectory %) (file-seq (io/file (System/getProperty "softwarebears.blog")))))
 
 (defn read-more-link [f]
   (let [n (.getName f)]
