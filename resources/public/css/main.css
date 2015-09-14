@@ -371,7 +371,7 @@ margin: 0.5em 1em;
 -moz-transition: margin 0.3s;
 transition: margin 0.3s;
 }
-header.detached h1, .detached #show-nav {
+.detached h1, .detached #show-nav {
 margin: 0.1em 1em;
 -webkit-transition: margin 0.3s;
 -moz-transition: margin 0.3s;
@@ -467,9 +467,6 @@ color: green;
 }
 .error {
 color: red;
-}
-#close {
-display: none;
 }
 #show-nav {
 display: none;
