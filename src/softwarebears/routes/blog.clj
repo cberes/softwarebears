@@ -5,8 +5,10 @@
             [softwarebears.util.markdown :as md]
             [softwarebears.views.layout :as layout]))
 
+(def blog-path (delay (System/getProperty "softwarebears.blog")))
+
 (defn- get-file [item-name]
-  (io/file (io/resource (str "blog/" item-name ".md"))))
+  (io/file (str @blog-path "/" item-name ".md")))
 
 (defn blog-item [markup]
   (layout/common
@@ -16,7 +18,9 @@
       [:section#blog-item.white markup]]))
 
 (defn get-blog-items []
-  (remove #(.isDirectory %) (file-seq (io/file (System/getProperty "softwarebears.blog")))))
+  (filter
+    (apply every-pred [#(not (.isDirectory %)) #(not= (first (.getName %)) \.)])
+    (seq (.listFiles (io/file @blog-path)))))
 
 (defn read-more-link [f]
   (let [n (.getName f)]
