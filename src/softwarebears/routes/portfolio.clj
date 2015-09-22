@@ -91,15 +91,15 @@
 
 (defn portfolio []
   (layout/common
-    [:div.intro.headline.full.trnp.plax.plax1
+    [:div.intro.headline.full.trnp.plax.plax3
       [:p.middle "We helped these clients solve their problems. We can help you next."]]
     [:main
       [:section.white
         [:p "Please take a look at these samples from my public work. In addition, I have ten years of professional experience as a software engineer and web developer."]]
       (alsi)
-      [:div.divider.trnp.plax.plax2]
+      [:div.divider.trnp.plax.plax4]
       (siol)
-      [:div.divider.trnp.plax.plax2]
+      [:div.divider.trnp.plax.plax4]
       (funner-summer)]))
 
 (defroutes portfolio-routes

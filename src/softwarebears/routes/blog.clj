@@ -28,7 +28,7 @@
 
 (defn blog []
   (layout/common
-    [:div.intro.headline.full.trnp.plax.plax1
+    [:div.intro.headline.full.trnp.plax.plax5
       [:p "Writing about technology from an engineer's point of view."]]
     [:main.blog
       ; the map call returns a lazy sequence of sequences of elements
@@ -37,7 +37,7 @@
       (drop-last
         (reduce
           concat
-          (map #(seq [[:section.white (md/preview %) [:h4 (read-more-link %)]] [:div.divider.trnp.plax.plax2]]) (get-blog-items))))]))
+          (map #(seq [[:section.white (md/preview %) [:h4 (read-more-link %)]] [:div.divider.trnp.plax.plax4]]) (get-blog-items))))]))
 
 (defn latest-blog-item []
   (let [f (first (get-blog-items))]

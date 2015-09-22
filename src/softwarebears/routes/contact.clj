@@ -23,7 +23,7 @@
 
 (defn contact [& [result result-class fname lname email message]]
   (layout/common
-    [:div.intro.headline.full.trnp.plax.plax1
+    [:div.intro.headline.full.trnp.plax.plax6
       [:p "We want to hear about your project."]]
     [:main
       [:section.colory.white

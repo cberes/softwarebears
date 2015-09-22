@@ -27,7 +27,7 @@
 (defn client-quotes []
   [:div.half.trnp.plax.plax2
     [:section.middle
-      [:h2 "What my clients have said"]
+      [:h2 "Our clients have spoken"]
       [:figure (image {:class "who"} "/img/beres_chris.jpg" "Christine Beres, ALSI")]
       [:blockquote
         "I like it! Love the colors. And the photos jazz it up. I like the mobile web page. What a great idea. Never thought of that. Thank you so much for fixing things up.  "
