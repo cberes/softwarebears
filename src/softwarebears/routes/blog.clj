@@ -1,11 +1,12 @@
 (ns softwarebears.routes.blog
   (:require [clojure.java.io :as io]
             [compojure.core :refer :all]
+            [compojure.route :as route]
             [hiccup.element :refer [image link-to]]
             [softwarebears.util.markdown :as md]
             [softwarebears.views.layout :as layout]))
 
-(def blog-path (delay (System/getProperty "softwarebears.blog")))
+(def blog-path (delay (System/getProperty "softwarebears.blog" "/home/corey/repos/softwarebears-blog")))
 
 (defn- get-file [item-name]
   (io/file (str @blog-path "/" item-name ".md")))
@@ -45,4 +46,5 @@
 
 (defroutes blog-routes
   (GET "/blog/:f" [f] (blog-item (md/render (get-file f))))
-  (GET "/blog" [] (blog)))
+  (GET "/blog" [] (blog))
+  (route/files "/" {:root @blog-path}))
