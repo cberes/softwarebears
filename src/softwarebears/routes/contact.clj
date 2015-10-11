@@ -15,10 +15,10 @@
 (def subject "softwarebears.com contact")
 
 (def smtp
-  (delay {:host (System/getProperty "email.host")
-          :port (System/getProperty "email.port")
-          :user (System/getProperty "email.user")
-          :pass (System/getProperty "email.pass")
+  (delay {:host (System/getenv "SB_EMAIL_HOST")
+          :port (System/getenv "SB_EMAIL_PORT")
+          :user (System/getenv "SB_EMAIL_USER")
+          :pass (System/getenv "SB_EMAIL_PASS")
           :ssl true}))
 
 (defn contact [& [result result-class fname lname email message]]

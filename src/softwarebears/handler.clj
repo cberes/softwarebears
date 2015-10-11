@@ -3,7 +3,6 @@
             [compojure.route :as route]
             [ring.middleware.defaults :refer [wrap-defaults site-defaults]]
             [noir.validation :refer [wrap-noir-validation]]
-            [softwarebears.util.settings :refer [load-properties]]
             [softwarebears.routes.home :refer [home-routes]]
             [softwarebears.routes.portfolio :refer [portfolio-routes]]
             [softwarebears.routes.blog :refer [blog-routes]]
@@ -23,6 +22,3 @@
         error-routes)
       (wrap-defaults site-defaults)
       (wrap-noir-validation)))
-
-(defn init []
-  (load-properties))

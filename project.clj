@@ -12,8 +12,7 @@
                  [markdown-clj "0.9.69"]]
   :plugins [[lein-ring "0.9.6"]
             [lein-cljsbuild "1.1.0"]]
-  :ring {:handler softwarebears.handler/app
-         :init softwarebears.handler/init}
+  :ring {:handler softwarebears.handler/app}
   :cljsbuild {
     :builds [{
         :source-paths ["src-cljs"]

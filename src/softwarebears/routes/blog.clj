@@ -6,10 +6,10 @@
             [softwarebears.util.markdown :as md]
             [softwarebears.views.layout :as layout]))
 
-(def blog-path (delay (System/getProperty "softwarebears.blog" "/home/corey/repos/softwarebears-blog")))
+(def blog-path (System/getenv "SB_BLOG"))
 
 (defn- get-file [item-name]
-  (io/file (str @blog-path "/" item-name ".md")))
+  (io/file (str blog-path "/" item-name ".md")))
 
 (defn blog-item [markup]
   (layout/common
@@ -20,8 +20,8 @@
 
 (defn get-blog-items []
   (filter
-    (apply every-pred [#(not (.isDirectory %)) #(not= (first (.getName %)) \.)])
-    (seq (.listFiles (io/file @blog-path)))))
+    (apply every-pred [#(not (.isDirectory %)) #(not= (first (.getName %)) \.) #(.endsWith (.getName %) ".md")])
+    (seq (.listFiles (io/file blog-path)))))
 
 (defn read-more-link [f]
   (let [n (.getName f)]
@@ -47,4 +47,4 @@
 (defroutes blog-routes
   (GET "/blog/:f" [f] (blog-item (md/render (get-file f))))
   (GET "/blog" [] (blog))
-  (route/files "/" {:root @blog-path}))
+  (route/files "/" {:root blog-path}))
