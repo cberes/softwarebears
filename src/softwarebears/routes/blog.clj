@@ -19,9 +19,14 @@
       [:section#blog-item.white markup]]))
 
 (defn get-blog-items []
-  (filter
-    (apply every-pred [#(not (.isDirectory %)) #(not= (first (.getName %)) \.) #(.endsWith (.getName %) ".md")])
-    (seq (.listFiles (io/file blog-path)))))
+  (->>
+    (seq (.listFiles (io/file blog-path)))
+    (filter
+      (apply every-pred [#(not (.isDirectory %))
+                         #(not= (first (.getName %)) \.)
+                         #(.endsWith (.getName %) ".md")]))
+    (sort)
+    (reverse)))
 
 (defn read-more-link [f]
   (let [n (.getName f)]
