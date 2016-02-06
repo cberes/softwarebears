@@ -32,7 +32,7 @@
       [:h3 "Tools of the trade"]
       [:p [:strong "PHP"] " was used for a template that simplified each page's markup. Version 5.3 was used because of ALSI's server's limitations. PHP was also used for custom CMS, alongside " [:strong "MySQL"] " as the database for event storage. " [:strong "HTML 5"] " and " [:strong "CSS 3"] " were used for the design. " [:strong "JavaScript"] " was used to make certain elements of the design interactive. " [:strong "Git"] " is used for source code management."]
       [:h3 "Take a look"]
-      [:p "ALSI's new website is live at " (link-to "http://alsi.org/" "alsi.org") "."]
+      [:p "ALSI's new website is live at " (link-to "http://alsi.org/scroll/" "alsi.org") "."]
       [:h4 (link-to {:onclick "softwarebears.readmore.show_less('alsi-more', 'alsi-less');"} "#alsi" "Show less &gt;&gt;&gt;")]]])
 
 (defn siol []
