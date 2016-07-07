@@ -16,7 +16,7 @@
 
 (def smtp
   (delay {:host (System/getenv "SB_EMAIL_HOST")
-          :port (System/getenv "SB_EMAIL_PORT")
+          :port (Integer/parseInt (System/getenv "SB_EMAIL_PORT"))
           :user (System/getenv "SB_EMAIL_USER")
           :pass (System/getenv "SB_EMAIL_PASS")
           :ssl true}))
@@ -50,16 +50,16 @@
             [:tr
               [:td (text-field {:maxlength 100} :fname fname)]
               [:td (text-field {:maxlength 100} :lname lname)]]]
-            ; email address
-            (label :email "Email address")
-            [:div.error (on-error :email first)]
-            (email-field {:maxlength 250} :email email)
-            ; email message
-            (label :message "Tell us about your project")
-            [:div.error (on-error :message first)]
-            (text-area {:maxlength 2000 :rows 10} :message message)
-            ; submit button
-            (submit-button "Send"))]]))
+          ; email address
+          (label :email "Email address")
+          [:div.error (on-error :email first)]
+          (email-field {:maxlength 250} :email email)
+          ; email message)
+          (label :message "Tell us about your project")
+          [:div.error (on-error :message first)]
+          (text-area {:maxlength 2000 :rows 10} :message message)
+          ; submit button
+          (submit-button "Send"))]]))
 
 (defn build-name [fname lname]
   (trim (str fname " " lname)))
