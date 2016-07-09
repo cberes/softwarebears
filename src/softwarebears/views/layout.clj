@@ -10,7 +10,7 @@
   (html5
     [:head
       [:title title]
-      (include-css "http://fonts.googleapis.com/css?family=Montserrat+Alternates:400,700")
+      (include-css "//fonts.googleapis.com/css?family=Montserrat+Alternates:400,700")
       (include-css "/css/normalize.css")
       (include-css "/css/main.css")
       (include-css "/css/highlight/default.css")
