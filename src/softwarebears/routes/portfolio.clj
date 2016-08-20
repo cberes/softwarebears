@@ -56,7 +56,7 @@
       [:h3 "Tools of the trade"]
       [:p "The website was written in " [:strong "Clojure 1.6"] " with use of the " [:strong "Ring"] ", " [:strong "Compojure"] ", and " [:strong "lib-noir"] " libraries. The " [:strong "Hiccup"] " library was used to write the HTML. The latest " [:strong "CSS 3"] " features were used for the design. All posts and user info was stored with " [:strong "PostgreSQL 9.x"] ". " [:strong "JavaScript"] " was used for asynchronous requests, such as comments and users follows. " [:strong "Leiningen"] " is used to manage builds. " [:strong "Git"] " is used for source code management."]
       [:h3 "Take a look"]
-      [:p [:em "7 items or less"] " is live at " (link-to "http://7itemsorless.today/" "7itemsorless.today") "."]
+      [:p [:em "7 items or less"] " is live at " (link-to "https://7itemsorless.com/" "7itemsorless.com") "."]
       [:h4 (link-to {:onclick "softwarebears.readmore.show_less('siol-more', 'siol-less');"} "#siol" "Show less &gt;&gt;&gt;")]]])
 
 (defn funner-summer []
