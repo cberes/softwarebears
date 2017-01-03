@@ -13,9 +13,15 @@
 (defn hide [element]
   (classes/remove! element class-name))
 
-(defn ^:export toggle []
+(defn toggle [evt]
   (let [element (nav-element)]
     (if (classes/has-class? element class-name)
       (hide element)
       (show element)))
-  false)
+  (.preventDefault evt))
+
+(.addEventListener
+  js/document
+  "DOMContentLoaded"
+  (fn [_]
+    (.addEventListener (.getElementById js/document "show-nav") "click" toggle)))

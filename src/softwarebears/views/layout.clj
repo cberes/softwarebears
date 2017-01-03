@@ -36,7 +36,7 @@
           [:span "Software"]
           [:span "Bears"]]]
       [:nav
-        [:div#show-nav {:onclick "softwarebears.nav.toggle();"}]
+        [:div#show-nav]
         [:ul
           [:li (link-to "/" "Home")]
           [:li (link-to "/portfolio" "Portfolio")]
