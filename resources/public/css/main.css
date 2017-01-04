@@ -8,10 +8,6 @@ padding: 0;
 body {
 background: #FFFFFF;
 font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-/*
-perspective: 1px;
-transform-style: preserve-3d;
-*/
 }
 /* clear */
 .clear, .reset {
@@ -21,15 +17,6 @@ clear: both;
 height: 0;
 width: 0;
 }
-/*
-.middle {
-position: relative;
-top: 50%;
--webkit-transform: translateY(-50%);
--ms-transform: translateY(-50%);
-transform: translateY(-50%);
-}
-*/
 .half {
 margin: 0;
 padding: 9vh 0;
@@ -554,6 +541,9 @@ cursor: pointer;
 }
 #show-nav:before {
 content: "\2630";
+}
+pre code {
+font-size: 90%;
 }
 /* small screens */
 @media screen and (max-width: 800px), screen and (max-device-width: 800px) {
