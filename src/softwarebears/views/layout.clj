@@ -11,7 +11,7 @@
     [:head
       [:title title]
       (include-css "//fonts.googleapis.com/css?family=Montserrat+Alternates:400,700")
-      (include-css "/css/normalize.css")
+      (include-css "/css/normalize.min.css")
       (include-css "/css/main.css")
       (include-css "/css/highlight.min.css")
       (include-js "/js/main.js")
