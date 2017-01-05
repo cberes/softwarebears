@@ -47,8 +47,7 @@
   (seq (preview-single-blog-item (first (get-blog-items)) "#")))
 
 (defn- preview-blog-item [f & [prefix]]
-  [(into [:section.white] (preview-single-blog-item f prefix))
-   [:div.divider.trnp.plax.plax4]])
+  (into [:section.white] (preview-single-blog-item f prefix)))
 
 (defn blog []
   (layout/common
@@ -57,8 +56,7 @@
     [:main.blog
       (->> (get-blog-items)
         (map preview-blog-item)
-        (reduce concat) ; reduce to a single sequence
-        (drop-last))])) ; drop the last element, which is a divider
+        (interpose [:div.divider.trnp.plax.plax4]))]))
 
 (defroutes blog-routes
   (GET "/blog/:f" [f] (blog-item (md/render (get-file f))))
