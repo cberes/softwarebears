@@ -1,38 +1,33 @@
 (ns softwarebears.readmore)
 
+(defn parent [elem n]
+  (if (<= n 0)
+    elem
+    (recur (.-parentNode elem) (dec n))))
+
+(defn set-display [elem display]
+  (-> elem
+    .-style
+    .-display
+    (set! display)))
+
+(defn toggle [evt css-class parent-levels]
+  (-> evt
+    .-currentTarget
+    (parent parent-levels)
+    (.querySelector css-class)
+    (set-display "block"))
+  (-> evt
+    .-currentTarget
+    (parent (dec parent-levels))
+    (set-display "none")))
+
 (defn read-more [evt]
-  (-> evt
-    .-currentTarget
-    .-parentNode
-    .-parentNode
-    (.querySelector ".more")
-    .-style
-    .-display
-    (set! "block"))
-  (-> evt
-    .-currentTarget
-    .-parentNode
-    .-style
-    .-display
-    (set! "none"))
+  (toggle evt ".more" 2)
   (.preventDefault evt))
 
 (defn show-less [evt]
-  (-> evt
-    .-currentTarget
-    .-parentNode
-    .-parentNode
-    .-style
-    .-display
-    (set! "none"))
-  (-> evt
-    .-currentTarget
-    .-parentNode
-    .-parentNode
-    .-parentNode
-    (.querySelector ".less")
-    .-style
-    .-display (set! "block")))
+  (toggle evt ".less" 3))
 
 (.addEventListener
   js/document
