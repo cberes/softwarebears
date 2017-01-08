@@ -1,25 +1,21 @@
 (ns softwarebears.routes.contact
   (:require [clojure.string :refer [trim]]
+            [clojure.java.io :as io]
             [compojure.core :refer :all]
             [ring.middleware.anti-forgery :refer [*anti-forgery-token*]]
             [hiccup.element :refer [image link-to mail-to]]
             [hiccup.form :refer [form-to label email-field text-area text-field file-upload hidden-field check-box submit-button]]
             [noir.validation :refer [rule errors? has-value? is-email? matches-regex? not-nil? on-error]]
-            [postal.core :refer [send-message]]
             [softwarebears.views.layout :as layout]))
 
 (def phone "(716) 222 0088")
 
 (def to-email "hello@softwarebears.com")
 
-(def subject "softwarebears.com contact")
+(def formatter (java.time.format.DateTimeFormatter/ofPattern "yyyyMMddHHmmssSSS"))
 
-(def smtp
-  (delay {:host (System/getenv "SB_EMAIL_HOST")
-          :port (Integer/parseInt (System/getenv "SB_EMAIL_PORT"))
-          :user (System/getenv "SB_EMAIL_USER")
-          :pass (System/getenv "SB_EMAIL_PASS")
-          :ssl true}))
+(defn random-file-name [ext]
+  (str (.format formatter (java.time.LocalDateTime/now)) "." ext))
 
 (defn contact [& [result result-class fname lname email message]]
   (layout/common
@@ -64,19 +60,15 @@
 (defn build-name [fname lname]
   (trim (str fname " " lname)))
 
-(defn build-message [fullname email message]
-  (str "Name: " fullname "\nFrom: " email "\n" message))
+(defn build-message [fname lname email message]
+  (str "Name: " (build-name fname lname) \newline
+       "From: " email \newline
+       message))
 
 (defn send-contact [fname lname email message]
-  (let [fullname (build-name fname lname)
-        result (send-message smtp
-                 {:from email
-                  :to to-email
-                  :subject (str subject " from " fullname)
-                  :body (build-message fullname email message)})]
-    (if (= 0 (:code result))
-      (contact "Thanks! We'll be in touch." "success")
-      (contact (str result) "error" fname lname email message))))
+  (spit (io/file (System/getenv "SB_EMAIL_DIR") (random-file-name "txt"))
+        (build-message fname lname email message))
+  (contact "Thanks! We'll be in touch." "success"))
 
 (defn handle-contact [fname lname email message]
   (rule (is-email? email) [:email "Please enter a valid email address."])
