@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
 
-export SB_BASEURL="http://softwarebears.com"
+export SB_BASEURL=""
 export SB_BLOG="$(pwd)/../softwarebears-blog/"
 
 deploy() {
-	lein uberjar
+	#lein uberjar
 	java -jar target/uberjar/softwarebears-*-standalone.jar $1
 	cp -r resources/public/* $1
+	cp -r $SB_BLOG/img/ $1
 }
 
 deploy docs/

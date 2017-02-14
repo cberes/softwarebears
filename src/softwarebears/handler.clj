@@ -2,7 +2,6 @@
   (:require [compojure.core :refer :all]
             [compojure.route :as route]
             [ring.middleware.defaults :refer [wrap-defaults site-defaults]]
-            [noir.validation :refer [wrap-noir-validation]]
             [softwarebears.routes.home :refer [home-routes]]
             [softwarebears.routes.portfolio :refer [portfolio-routes]]
             [softwarebears.routes.blog :refer [blog-routes]]
@@ -20,5 +19,4 @@
         contact-routes
         app-routes
         error-routes)
-      (wrap-defaults site-defaults)
-      (wrap-noir-validation)))
+      (wrap-defaults site-defaults)))

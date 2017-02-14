@@ -35,9 +35,12 @@
 (defn- trim-end [s suffix]
   (subs s 0 (- (count s) (count suffix))))
 
+(defn- get-item-id [file-name]
+  (trim-end file-name ".md"))
+
 (defn- read-more-link [f]
   (let [file-name (.getName f)]
-    (link-to (str "/blog/" (trim-end file-name ".md")) "Read more &gt;&gt;&gt;")))
+    (link-to (str "/blog/" (get-item-id file-name)) "Read more &gt;&gt;&gt;")))
 
 (defn- preview-single-blog-item [f & [prefix]]
   [(md/preview f prefix) [:h4 (read-more-link f)]])
@@ -58,7 +61,15 @@
         (map preview-blog-item)
         (interpose [:div.divider.trnp.plax.plax4]))]))
 
+(defn render-blog-item [id]
+  (blog-item (md/render (get-file id))))
+
+(defn get-blog-item-ids []
+  (->> (get-blog-items)
+    (map #(.getName %))
+    (map get-item-id)))
+
 (defroutes blog-routes
-  (GET "/blog/:f" [f] (blog-item (md/render (get-file f))))
+  (GET "/blog/:f" [f] (render-blog-item f))
   (GET "/blog" [] (blog))
   (route/files "/" {:root blog-path}))
