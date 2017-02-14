@@ -2,7 +2,6 @@
   (:require [compojure.core :refer :all]
             [hiccup.element :refer [image link-to mail-to]]
             [hiccup.form :refer [form-to label email-field text-area text-field file-upload hidden-field check-box submit-button]]
-            [noir.validation :refer [rule errors? has-value? is-email? matches-regex? not-nil? on-error]]
             [softwarebears.views.layout :as layout]))
 
 (def phone "(716) 222 0088")
@@ -33,18 +32,13 @@
               [:th (label :fname "First name")]
               [:th (label :lname "Last name")]]
             [:tr
-              [:td (on-error :fname first)]
-              [:td (on-error :lname first)]]
-            [:tr
               [:td (text-field {:maxlength 100} :fname)]
               [:td (text-field {:maxlength 100} :lname)]]]
           ; email address
           (label :email "Email address")
-          [:div.error (on-error :email first)]
           (email-field {:maxlength 250} :email)
           ; email message)
           (label :message "Tell us about your project")
-          [:div.error (on-error :message first)]
           (text-area {:maxlength 2000 :rows 10} :message)
           ; submit button
           (submit-button "Send"))]]))

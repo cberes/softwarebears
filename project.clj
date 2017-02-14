@@ -20,7 +20,11 @@
         :optimizations :whitespace
         :pretty-print false}}]}
   :hooks [leiningen.cljsbuild]
+  :main ^:skip-aot softwarebears.generator
+  :target-path "target/%s"
   :profiles {
+    :uberjar {
+      :aot :all}
     :dev {
       :dependencies [[javax.servlet/javax.servlet-api "3.1.0"]
                      [ring/ring-mock "0.2.0"]]}})
