@@ -5,6 +5,7 @@
             [softwarebears.routes.portfolio :refer [portfolio]]
             [softwarebears.routes.blog :refer [blog render-blog-item get-blog-item-ids]]
             [softwarebears.routes.contact :refer [contact]]
+            [softwarebears.routes.rss :refer [rss-xml]]
             [softwarebears.routes.error :refer [not-found]]))
 
 (defn save-page [content & paths]
@@ -22,6 +23,7 @@
     (save-page (not-found) root "404.html")
     (save-page (portfolio) root "portfolio" "index.html")
     (save-page (contact) root "contact" "index.html")
+    (save-page (rss-xml) root "rss.xml")
     (save-page (blog) root "blog" "index.html")
     (save-blog-entries root "blog" "index.html")))
 

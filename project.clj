@@ -8,7 +8,8 @@
                  [ring/ring-defaults "0.1.5"]
                  [hiccup "1.0.5"]
                  [lib-noir "0.9.9"]
-                 [markdown-clj "0.9.69"]]
+                 [markdown-clj "0.9.69"]
+                 [clj-rss "0.2.3"]]
   :plugins [[lein-ring "0.9.6"]
             [lein-cljsbuild "1.1.0"]]
   :ring {:handler softwarebears.handler/app}

@@ -47,7 +47,7 @@
           [:span.time (format-published-time (:timestamp metadata))]]
         markup]]))
 
-(defn- get-blog-items []
+(defn get-blog-items []
   (->> blog-path
     (io/file)
     (.listFiles)
@@ -63,9 +63,14 @@
 (defn- get-item-id [file-name]
   (trim-end file-name ".md"))
 
+(defn get-endpoint [f]
+  (->> f
+    (.getName)
+    (get-item-id)
+    (str "/blog/")))
+
 (defn- read-more-link [f]
-  (let [file-name (.getName f)]
-    (link-to (str "/blog/" (get-item-id file-name)) "Read more &gt;&gt;&gt;")))
+  (link-to (get-endpoint f) "Read more &gt;&gt;&gt;"))
 
 (defn latest-blog-item []
   ; hiccup needs this function to return a seq (not a vector)

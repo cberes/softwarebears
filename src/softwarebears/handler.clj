@@ -6,6 +6,7 @@
             [softwarebears.routes.portfolio :refer [portfolio-routes]]
             [softwarebears.routes.blog :refer [blog-routes]]
             [softwarebears.routes.contact :refer [contact-routes]]
+            [softwarebears.routes.rss :refer [rss-routes]]
             [softwarebears.routes.error :refer [error-routes]]))
 
 (defroutes app-routes
@@ -17,6 +18,7 @@
         portfolio-routes
         blog-routes
         contact-routes
+        rss-routes
         app-routes
         error-routes)
       (wrap-defaults site-defaults)))
