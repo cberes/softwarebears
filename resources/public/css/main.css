@@ -154,6 +154,12 @@ text-align: center;
 .blog h3 {
 margin: 1em auto;
 }
+.blog .metadata {
+text-align: center;
+}
+.blog .metadata .author, .blog .metadata .time {
+font-weight: bold;
+}
 /* main elements */
 main > section, body > footer {
 margin: 0;

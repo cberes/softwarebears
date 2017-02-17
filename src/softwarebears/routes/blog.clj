@@ -1,4 +1,5 @@
 (ns softwarebears.routes.blog
+  (:import [java.time.format DateTimeFormatter])
   (:require [clojure.java.io :as io]
             [compojure.core :refer :all]
             [compojure.route :as route]
@@ -8,20 +9,43 @@
 
 (def blog-path (System/getenv "SB_BLOG"))
 
+(def date-time-formatter (DateTimeFormatter/ofPattern "EEE, MMM d, uuuu"))
+
 (def markdown-file?
   (every-pred #(not (.isDirectory %))
               #(not= (first (.getName %)) \.)
               #(.endsWith (.getName %) ".md")))
 
+(defn- parse-to-date-time [s]
+  (.parse DateTimeFormatter/ISO_DATE_TIME s))
+
+(defn- format-date-time [t]
+  (.format date-time-formatter t))
+
+(defn- format-published-time [s]
+  (-> s
+    (parse-to-date-time)
+    (format-date-time)))
+
+(defn- draft? [f]
+  (:draft (md/metadata f)))
+
 (defn- get-file [item-name]
   (io/file (str blog-path "/" item-name ".md")))
 
-(defn- blog-item [markup]
+(defn- blog-item [metadata markup]
   (layout/common
     [:div.intro.full.black
       [:p.middle [:span.name [:span "Software"] [:span "Bears"] ".com"]]]
     [:main.blog
-      [:section#blog-item.white markup]]))
+      [:section#blog-item.white
+        [:h2 (:title metadata)]
+        [:p.metadata
+          "By "
+          [:span.author (:author metadata)]
+          " on "
+          [:span.time (format-published-time (:timestamp metadata))]]
+        markup]]))
 
 (defn- get-blog-items []
   (->> blog-path
@@ -29,6 +53,7 @@
     (.listFiles)
     (seq)
     (filter markdown-file?)
+    (remove draft?)
     (sort)
     (reverse)))
 
@@ -42,15 +67,20 @@
   (let [file-name (.getName f)]
     (link-to (str "/blog/" (get-item-id file-name)) "Read more &gt;&gt;&gt;")))
 
-(defn- preview-single-blog-item [f & [prefix]]
-  [(md/preview f prefix) [:h4 (read-more-link f)]])
-
 (defn latest-blog-item []
   ; hiccup needs this function to return a seq (not a vector)
-  (seq (preview-single-blog-item (first (get-blog-items)) "#")))
+  (let [f (first (get-blog-items))
+        metadata (md/metadata f)]
+    (seq [[:h3 (:title metadata)]
+          (md/preview f)
+          [:h4 (read-more-link f)]])))
 
-(defn- preview-blog-item [f & [prefix]]
-  (into [:section.white] (preview-single-blog-item f prefix)))
+(defn- preview-blog-item [f]
+  (let [metadata (md/metadata f)]
+    [:section.white
+      [:h2 (:title metadata)]
+      (md/preview f)
+      [:h4 (read-more-link f)]]))
 
 (defn blog []
   (layout/common
@@ -62,7 +92,8 @@
         (interpose [:div.divider.trnp.plax.plax4]))]))
 
 (defn render-blog-item [id]
-  (blog-item (md/render (get-file id))))
+  (let [f (get-file id)]
+    (blog-item (md/metadata f) (md/render f))))
 
 (defn get-blog-item-ids []
   (->> (get-blog-items)

@@ -13,18 +13,18 @@
 (defn- get-preview-or-whole [preview? s]
   (string/replace s (if preview? #"(?s)%%read-more%%.*$" "%%read-more%%") ""))
 
-(defn- read-file [f prefix preview?]
+(defn- read-file [f preview?]
   (->> f
     (slurp)
-    (str (or prefix ""))
     (remove-metadata)
-    (get-preview-or-whole preview?)))
+    (get-preview-or-whole preview?)
+    (md-to-html-string)))
 
-(defn render [f & [prefix]]
-  (md-to-html-string (read-file f prefix false)))
+(defn render [f]
+  (read-file f false))
 
-(defn preview [f & [prefix]]
-  (md-to-html-string (read-file f prefix true)))
+(defn preview [f]
+  (read-file f true))
 
 (defn metadata [f]
   (->> f
