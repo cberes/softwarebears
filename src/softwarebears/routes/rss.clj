@@ -8,6 +8,8 @@
             [softwarebears.routes.blog :as blog]
             [softwarebears.util.markdown :as md]))
 
+(def endpoint "/rss.xml")
+
 (defn- parse-published-time [s]
   (.parse (SimpleDateFormat. "yyyy-MM-dd'T'HH:mm:ssX") s))
 
@@ -23,7 +25,7 @@
 
 (defn- build-channel [items]
   (rss/channel-xml {:title title
-                    :link base-url
+                    :link (str base-url endpoint)
                     :lastBuildDate (:pubDate (first items))
                     :description description} items))
 
@@ -33,5 +35,5 @@
     (build-channel)))
 
 (defroutes rss-routes
-  (GET "/rss.xml" [] (rss-xml)))
+  (GET endpoint [] (rss-xml)))
 
