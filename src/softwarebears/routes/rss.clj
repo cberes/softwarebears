@@ -17,6 +17,7 @@
     {:title title
      :author author
      :link (str base-url (blog/get-endpoint f))
+     :guid [{:isPermaLink false} (blog/get-id f)]
      :pubDate (parse-published-time timestamp)
      :description (str "<![CDATA[ " preview " ]]>")}))
 

@@ -63,11 +63,13 @@
 (defn- get-item-id [file-name]
   (trim-end file-name ".md"))
 
-(defn get-endpoint [f]
+(defn get-id [f]
   (->> f
     (.getName)
-    (get-item-id)
-    (str "/blog/")))
+    (get-item-id)))
+
+(defn get-endpoint [f]
+  (str "/blog/" (get-id f)))
 
 (defn- read-more-link [f]
   (link-to (get-endpoint f) "Read more &gt;&gt;&gt;"))
