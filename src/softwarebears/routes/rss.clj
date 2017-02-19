@@ -14,10 +14,9 @@
   (.parse (SimpleDateFormat. "yyyy-MM-dd'T'HH:mm:ssX") s))
 
 (defn- build-item [f]
-  (let [{title :title author :author timestamp :timestamp} (md/metadata f)
+  (let [{title :title timestamp :timestamp} (md/metadata f)
         preview (md/preview f)]
     {:title title
-     :author author
      :link (str base-url (blog/get-endpoint f))
      :guid [{:isPermaLink false} (blog/get-id f)]
      :pubDate (parse-published-time timestamp)
