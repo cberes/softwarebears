@@ -10,7 +10,7 @@
     [:figure
       (link-to "/img/alsi_new.png" (image {:class "side"} "/img/alsi_new.png" "Screenshot of www.alsi.org"))]
     [:h3 "Advanced Life Support Institute"]
-    [:p "Software Bears delivered to the Advanced Life Support Institute a modern design that focuses on content first. The latest web technologies, HTML 5 and CSS 3, were used."]
+    [:p "SeaBears delivered to the Advanced Life Support Institute a modern design that focuses on content first. The latest web technologies, HTML 5 and CSS 3, were used."]
     [:div.reset.zero ]
     [:h4 (link-to "/portfolio#alsi" "Read more &gt;&gt;&gt;")]])
 
@@ -20,7 +20,7 @@
     [:figure
       (link-to "/img/funner_main.png" (image {:class "side"} "/img/funner_main.png" "Screenshot of Funner Summer"))]
     [:h3 "Funner Summer, an Android app"]
-    [:p "Software Bears created Funner Summer, an Android app that suggests activities based on several factors: time of day, day of week, current weather, and whether you're alone, with someone else, or with a group. The app records your activities and uses your history to improve suggestions."]
+    [:p "SeaBears created Funner Summer, an Android app that suggests activities based on several factors: time of day, day of week, current weather, and whether you're alone, with someone else, or with a group. The app records your activities and uses your history to improve suggestions."]
     [:div.reset.zero ]
     [:h4 (link-to "/portfolio#fs" "Read more &gt;&gt;&gt;")]])
 

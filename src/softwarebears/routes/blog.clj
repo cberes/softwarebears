@@ -36,7 +36,7 @@
 (defn- blog-item [metadata markup]
   (layout/common
     [:div.intro.full.black
-      [:p.middle [:span.name [:span "Software"] [:span "Bears"] ".com"]]]
+      [:p.middle [:span.name [:span "Sea"] [:span "Bears"] ".net"]]]
     [:main.blog
       [:section#blog-item.white
         [:h2 (:title metadata)]

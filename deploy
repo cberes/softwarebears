@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-readonly domain=softwarebears.com
+readonly domain=seabears.net
 export SB_BASEURL="http://$domain"
 export SB_BLOG="$(pwd)/../softwarebears-blog/"
 export SB_DESCRIPTION="Writing about technology from an engineer's point of view."

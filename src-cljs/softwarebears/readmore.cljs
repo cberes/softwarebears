@@ -35,6 +35,8 @@
   (fn [_]
     (.addEventListener (.querySelector js/document "#alsi-more h4 a") "click" show-less)
     (.addEventListener (.querySelector js/document "h4#alsi-less a") "click" read-more)
+    (.addEventListener (.querySelector js/document "#stc-more h4 a") "click" show-less)
+    (.addEventListener (.querySelector js/document "h4#stc-less a") "click" read-more)
     (.addEventListener (.querySelector js/document "#siol-more h4 a") "click" show-less)
     (.addEventListener (.querySelector js/document "h4#siol-less a") "click" read-more)
     (.addEventListener (.querySelector js/document "#fs-more h4 a") "click" show-less)

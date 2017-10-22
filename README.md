@@ -1,6 +1,6 @@
 # softwarebears
 
-Website at http://softwarebears.com/.
+Website at http://seabears.net/.
 
 ## Prerequisites
 
@@ -16,4 +16,4 @@ To start a web server for the application, run:
 
 ## License
 
-Copyright © 2015 Corey Beres
+Copyright © 2015-2017 Corey Beres

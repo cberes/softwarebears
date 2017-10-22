@@ -4,7 +4,7 @@
 
 (def base-url (or (System/getenv "SB_BASEURL") ""))
 (def description (or (System/getenv "SB_DESCRIPTION") ""))
-(def title "Software Bears")
+(def title "SeaBears")
 (def phone "(716) 222 0088")
 (def email "hello@softwarebears.com")
 (def year (.get (java.util.Calendar/getInstance) java.util.Calendar/YEAR))
@@ -36,7 +36,7 @@
     [:body
       [:header
         [:h1.name
-          [:span "Software"]
+          [:span "Sea"]
           [:span "Bears"]]]
       [:nav
         [:div#show-nav]
@@ -65,7 +65,7 @@
           (str "Tel: " phone) [:br]
           "Find us on "
           (link-to "https://github.com/cberes" "GitHub") ", "
-          (link-to "https://instagram.com/softwarebears" "Instagram") ", &amp "
+          (link-to "https://instagram.com/coreyberes" "Instagram") ", &amp "
           (link-to "https://twitter.com/softwarebears" "Twitter") [:br]
-          "&copy; 2015-" year " " [:span.name [:span "Software"] [:span "Bears"]]]
+          "&copy; 2015-" year " " [:span.name [:span "Sea"] [:span "Bears"]]]
         [:div.clear]]]))
