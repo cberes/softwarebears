@@ -1,12 +1,8 @@
 (ns softwarebears.routes.contact
   (:require [compojure.core :refer :all]
-            [hiccup.element :refer [link-to mail-to]]
+            [hiccup.element :refer [image link-to mail-to]]
             [hiccup.form :refer [form-to label email-field text-area text-field hidden-field submit-button]]
             [softwarebears.views.layout :as layout]))
-
-(def phone "(716) 222 0088")
-
-(def to-email "hello@softwarebears.com")
 
 (defn contact []
   (layout/common
@@ -18,12 +14,12 @@
         [:h3 "Add us to your contacts"]
         [:table
           [:tr
-            [:th "Email"] [:td (mail-to to-email)]]
+            [:th "Email"] [:td (mail-to layout/email)]]
           [:tr
-            [:th "Telephone"] [:td phone]]]
+            [:th "Telephone"] [:td (image {:class "bottom"} "/img/dial-now-light.png")]]]
         [:h3 "Or send a message right now"]
         [:p "Please use this form to introduce yourself and to tell us about your project. You can include any additional contact info in the message. Your message will be sent via " (link-to "https://formspree.io/" "Formspree") ". Then we'll get back to you shortly."]
-        (form-to {:class "simple"} [:post (str "https://formspree.io/" to-email)]
+        (form-to {:class "simple"} [:post (str "https://formspree.io/" layout/email)]
           (hidden-field "_subject" "seabears.net contact")
           (text-field {:style "display:none;"} :_gotcha)
           [:table

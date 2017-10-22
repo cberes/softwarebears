@@ -1,12 +1,11 @@
 (ns softwarebears.views.layout
   (:require [hiccup.page :refer [html5 include-css include-js]]
-            [hiccup.element :refer [javascript-tag link-to mail-to]]))
+            [hiccup.element :refer [image javascript-tag link-to mail-to]]))
 
 (def base-url (or (System/getenv "SB_BASEURL") ""))
 (def description (or (System/getenv "SB_DESCRIPTION") ""))
 (def title "SeaBears")
-(def phone "(716) 222 0088")
-(def email "hello@softwarebears.com")
+(def email "hello@seabears.net")
 (def year (.get (java.util.Calendar/getInstance) java.util.Calendar/YEAR))
 
 (defn common [& body]
@@ -62,10 +61,10 @@
           "web applications, and database design"]
         [:p
           "Email: " (mail-to email) [:br]
-          (str "Tel: " phone) [:br]
+          "Tel: " (image {:class "bottom"} "/img/dial-now-dark.png") [:br]
           "Find us on "
           (link-to "https://github.com/cberes" "GitHub") ", "
           (link-to "https://instagram.com/coreyberes" "Instagram") ", &amp "
-          (link-to "https://twitter.com/softwarebears" "Twitter") [:br]
+          (link-to "https://twitter.com/SeaBearsNet" "Twitter") [:br]
           "&copy; 2015-" year " " [:span.name [:span "Sea"] [:span "Bears"]]]
         [:div.clear]]]))

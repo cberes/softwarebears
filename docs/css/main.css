@@ -204,7 +204,7 @@ margin: 1em 5% 1em 0;
 float: left;
 }
 img.who {
-max-width; 200px;
+max-width: 200px;
 width: 25%;
 margin: 0 5% 0 0;
 float: left;
@@ -212,6 +212,10 @@ float: left;
 img.main, .blog-imgs img {
 width: 95%;
 margin: 0 2.5%;
+}
+img.bottom {
+box-shadow: none;
+vertical-align: bottom;
 }
 .blog p img {
 width: 95%;
