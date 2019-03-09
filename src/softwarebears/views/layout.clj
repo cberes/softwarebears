@@ -69,7 +69,8 @@
           "Tel: " (image {:class "bottom"} "/img/dial-now-dark.png") [:br]
           "Find us on "
           (link-to "https://github.com/cberes" "GitHub") ", "
-          (link-to "https://instagram.com/coreyberes" "Instagram") ", &amp "
+          (link-to "https://instagram.com/coreyberes" "Instagram") ", "
+          (link-to "https://www.twitch.tv/cberes" "Twitch") ", &amp; "
           (link-to "https://twitter.com/_cberes" "Twitter") [:br]
           "&copy; 2015-" year " " [:span.name [:span "c"] [:span "beres"]]]
         [:div.clear]]]))
