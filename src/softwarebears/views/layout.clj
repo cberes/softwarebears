@@ -4,8 +4,8 @@
 
 (def base-url (or (System/getenv "SB_BASEURL") ""))
 (def description (or (System/getenv "SB_DESCRIPTION") ""))
-(def title "SeaBears")
-(def email "hello@seabears.net")
+(def title "cberes")
+(def email "corey.beres+cberes@gmail.com")
 (def year (.get (java.util.Calendar/getInstance) java.util.Calendar/YEAR))
 
 (defn common [& body]
@@ -35,28 +35,28 @@
     [:body
       [:header
         [:h1.name
-          [:span "Sea"]
-          [:span "Bears"]]]
+          [:span "c"]
+          [:span "beres"]]]
       [:nav
         [:div#show-nav]
         [:ul
           [:li (link-to "/" "Home")]
           [:li (link-to "/portfolio" "Portfolio")]
           [:li (link-to "/blog" "Blog")]
-          [:li (link-to "/contact" "Contact us")]]]
+          [:li (link-to "/contact" "Contact")]]]
       body
       [:footer.black
         [:h2
-          "Want to see more? View our "
+          "Want to see more? View my "
           (link-to "/portfolio" "portfolio")
-          ", read our "
+          ", read my "
           (link-to "/blog" "blog")
-          ", or check out our GitHub "
+          ", or check out my GitHub "
           (link-to "https://github.com/cberes" "repos")
           "."]
         [:p
           "Corey Beres" [:br]
-          "Freelance software engineer" [:br]
+          "Professional software engineer" [:br]
           "SOA, web services, Android apps &amp; SDKs," [:br]
           "web applications, and database design"]
         [:p
@@ -65,6 +65,6 @@
           "Find us on "
           (link-to "https://github.com/cberes" "GitHub") ", "
           (link-to "https://instagram.com/coreyberes" "Instagram") ", &amp "
-          (link-to "https://twitter.com/SeaBearsNet" "Twitter") [:br]
-          "&copy; 2015-" year " " [:span.name [:span "Sea"] [:span "Bears"]]]
+          (link-to "https://twitter.com/_cberes" "Twitter") [:br]
+          "&copy; 2015-" year " " [:span.name [:span "c"] [:span "beres"]]]
         [:div.clear]]]))

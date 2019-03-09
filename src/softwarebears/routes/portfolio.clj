@@ -8,7 +8,7 @@
     [:h2#alsi "Advanced Life Support Institute"]
     [:div
       [:h3 "A modern design"]
-      [:p "SeaBears delivered a modern design that focuses on content first. The latest web technologies, HTML 5 and CSS 3, were used."]
+      [:p "I delivered a modern design that focuses on content first. The latest web technologies, HTML 5 and CSS 3, were used."]
       [:figure
         (link-to "/img/alsi_new.png" (image "/img/alsi_new.png" "Screenshot of www.alsi.org"))]]
     [:h4#alsi-less.less
@@ -17,7 +17,7 @@
       {:style "display:none;"}
       [:p "This replaced a website that looked dated, having been designed in 2006."]
       [:h3 "The client's message, streamlined"]
-      [:p "SeaBears organized ALSI's content to tell their story. Important messages were brought to the users' attention with dramatic, bold text. With their previous design, ALSI's message was buried in a wall of text."]
+      [:p "I organized ALSI's content to tell their story. Important messages were brought to the users' attention with dramatic, bold text. With their previous design, ALSI's message was buried in a wall of text."]
       [:p "Take a look at the new design, with important messages highlighted:"]
       [:figure
         (link-to "/img/alsi_text_new.png" (image "/img/alsi_text_new.png" "Highlighted statements on new www.alsi.org"))]
@@ -25,7 +25,7 @@
       [:figure
         (link-to "/img/alsi_text_old.png" (image "/img/alsi_text_old.png" "Highlighted statements on old www.alsi.org"))]
       [:h3 "A complete website, integrated with a custom CMS"]
-      [:p "SeaBears provided eight pages with a consistent design. This gives the user a familiar experience across the entire website."]
+      [:p "I provided eight pages with a consistent design. This gives the user a familiar experience across the entire website."]
       [:p "Additionally, the custom CMS allows ALSI to easily create events that are visible in multiple places on their website. Each event has a page with a unique URL, so they can easily be shared on social media. Shown below is the calendar page, which ALSI's upcoming and past events."]
       [:figure
         (link-to "/img/alsi_calendar.png" (image "/img/alsi_calendar.png" "Screenshot of www.alsi.org events calendar"))]
@@ -40,16 +40,16 @@
     [:h2#stc "Spin the Choice"]
     [:div
       [:h3 "Do you want to " [:em "spin the choice"] "?"]
-      [:p "Spin the Choice is a game invented by Peggy Hill on " [:em "King of the Hill"] ". For this project, SeaBears implemented a version of the game. "]
+      [:p "Spin the Choice is a game invented by Peggy Hill on " [:em "King of the Hill"] ". For this project, I implemented a version of the game. "]
       [:figure
         (link-to "/img/stc_main.png" (image "/img/stc_main.png" "Spin the Choice home page"))]]
     [:h4#stc-less.less
       (link-to "#" "Read more &gt;&gt;&gt;")]
     [:div#stc-more.more
       {:style "display:none;"}
-      [:p "Spin the Choice is a game of chance that prompts the user to spin a wheel in order to win prizes. As Peggy Hill states, you can choose to choose or you can choose to spin. One of the jokes about the game is that its rules are ambiguous and contradictory. To build a playable game, we had to invent some of our own rules."]
+      [:p "Spin the Choice is a game of chance that prompts the user to spin a wheel in order to win prizes. As Peggy Hill states, you can choose to choose or you can choose to spin. One of the jokes about the game is that its rules are ambiguous and contradictory. To build a playable game, I had to invent some of my own rules."]
       [:h3 "Tools of the trade"]
-      [:p "The website was written in " [:strong "JavaScript"] " with some " [:strong "HTML"] ", " [:strong "CSS"] ", and " [:strong "Bootstrap 4"] ". That's it! It was the most JavaScript-intensive project that SeaBears has undertaken. For this reason, all JS lives in a single file, though much effort was spent ensuring that the code is readable. Custom scripts were authored to build and deploy the project. To cut down on costs, the website is hosted on " (link-to "https://pages.github.com/" "GitHub Pages") ", which offers free hosting for static websites."]
+      [:p "The website was written in " [:strong "JavaScript"] " with some " [:strong "HTML"] ", " [:strong "CSS"] ", and " [:strong "Bootstrap 4"] ". That's it! It was the most JavaScript-intensive project that I has undertaken. For this reason, all JS lives in a single file, though much effort was spent ensuring that the code is readable. Custom scripts were authored to build and deploy the project. To cut down on costs, the website is hosted on " (link-to "https://pages.github.com/" "GitHub Pages") ", which offers free hosting for static websites."]
       [:h3 "Take a look"]
       [:p [:em "Spin the Choice"] " is live at " (link-to "http://spinthechoice.com/" "spinthechoice.com") ". Play a game now!"]
       [:h4 (link-to "#stc" "Show less &gt;&gt;&gt;")]]])
@@ -83,7 +83,7 @@
     [:h2#fs "Funner Summer, an Android app"]
     [:div
       [:h3 "Context-based activity suggestions"]
-      [:p "SeaBears created Funner Summer, an Android app that suggests activities based on several factors: time of day, day of week, current weather, and whether you're alone, with someone else, or with a group. The app records your activities and uses your history to improve suggestions."]
+      [:p "I created Funner Summer, an Android app that suggests activities based on several factors: time of day, day of week, current weather, and whether you're alone, with someone else, or with a group. The app records your activities and uses your history to improve suggestions."]
       [:figure
         (link-to "/img/funner_main.png" (image "/img/funner_main.png" "Funner Summer home screen"))]]
     [:h4#fs-less.less
@@ -95,7 +95,7 @@
       [:figure
         (link-to "/img/funner_create.png" (image "/img/funner_create.png" "Funner Summer activity creation"))]
       [:h3 "Privacy first"]
-      [:p "Funner Summer records the history of a user's activities. This history can be shown to the user for reference, and it's used to improve subsequent suggestions. However, SeaBears values privacy. The activity history never leaves the user's mobile device."]
+      [:p "Funner Summer records the history of a user's activities. This history can be shown to the user for reference, and it's used to improve subsequent suggestions. However, I values privacy. The activity history never leaves the user's mobile device."]
       [:figure
         (link-to "/img/funner_history.png" (image "/img/funner_history.png" "Funner Summer activity history"))]
       [:h3 "A modern REST API"]
@@ -111,7 +111,7 @@
 (defn portfolio []
   (layout/common
     [:div.intro.headline.full.trnp.plax.plax3
-      [:p.middle "We helped these clients solve their problems. We can help you next."]]
+      [:p.middle "I helped these clients solve their problems, and I can help you next."]]
     [:main
       [:section.white
         [:p "Please take a look at these samples from my public work. In addition, I have ten years of professional experience as a software engineer and web developer."]]

@@ -10,7 +10,7 @@
     [:figure
       (link-to "/img/alsi_new.png" (image {:class "side"} "/img/alsi_new.png" "Screenshot of www.alsi.org"))]
     [:h3 "Advanced Life Support Institute"]
-    [:p "SeaBears delivered to the Advanced Life Support Institute a modern design that focuses on content first. The latest web technologies, HTML 5 and CSS 3, were used."]
+    [:p "I delivered to the Advanced Life Support Institute a modern design that focuses on content first. The latest web technologies, HTML 5 and CSS 3, were used."]
     [:div.reset.zero ]
     [:h4 (link-to "/portfolio#alsi" "Read more &gt;&gt;&gt;")]])
 
@@ -20,14 +20,14 @@
     [:figure
       (link-to "/img/funner_main.png" (image {:class "side"} "/img/funner_main.png" "Screenshot of Funner Summer"))]
     [:h3 "Funner Summer, an Android app"]
-    [:p "SeaBears created Funner Summer, an Android app that suggests activities based on several factors: time of day, day of week, current weather, and whether you're alone, with someone else, or with a group. The app records your activities and uses your history to improve suggestions."]
+    [:p "I created Funner Summer, an Android app that suggests activities based on several factors: time of day, day of week, current weather, and whether you're alone, with someone else, or with a group. The app records your activities and uses your history to improve suggestions."]
     [:div.reset.zero ]
     [:h4 (link-to "/portfolio#fs" "Read more &gt;&gt;&gt;")]])
 
 (defn client-quotes []
   [:div.half.trnp.plax.plax2
     [:section.middle
-      [:h2 "Our clients have spoken"]
+      [:h2 "My clients have spoken"]
       [:figure (image {:class "who"} "/img/beres_chris.jpg" "Christine Beres, ALSI")]
       [:blockquote
         "I like it! Love the colors. And the photos jazz it up. I like the mobile web page. What a great idea. Never thought of that. Thank you so much for fixing things up.  "
@@ -40,14 +40,14 @@
 
 (defn contact-us []
   [:section.white.slant-bottom-post
-    [:h2 "Contact us"]
-    [:p "Email us or call us about a project, or just to ask a question."]
+    [:h2 "Contact me"]
+    [:p "Email or call about a project, or just to ask a question."]
     [:p (link-to {:class "button"} "/contact" "Say hi")]])
 
 (defn home []
   (layout/common
     [:div.intro.headline.full.trnp.plax.plax1
-      [:p "We're full-stack software engineers who are ready to accommodate any budget."]]
+      [:p "I'm a full-stack software engineer with years of professional experience."]]
     [:main
       (latest-project1)
       (latest-project2)

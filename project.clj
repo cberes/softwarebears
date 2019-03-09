@@ -1,6 +1,6 @@
-(defproject softwarebears "0.1.0-SNAPSHOT"
-  :description "seabears.net website"
-  :url "http://seabears.net"
+(defproject softwarebears "1.0.0-SNAPSHOT"
+  :description "cberes.com website"
+  :url "https://cberes.com"
   :min-lein-version "2.0.0"
   :dependencies [[org.clojure/clojure "1.7.0"]
                  [org.clojure/clojurescript "1.7.48"]
@@ -22,6 +22,7 @@
         :pretty-print false}}]}
   :hooks [leiningen.cljsbuild]
   :main ^:skip-aot softwarebears.generator
+  :jvm-opts ["--add-modules" "java.xml.bind"]
   :target-path "target/%s"
   :profiles {
     :uberjar {
