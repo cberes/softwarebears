@@ -20,7 +20,7 @@
         [:h3 "Or send a message right now"]
         [:p "Please use this form to introduce yourself and to tell me about your project. You can include any additional contact info in the message. Your message will be sent via " (link-to "https://formspree.io/" "Formspree") ". Then I'll get back to you shortly."]
         (form-to {:class "simple"} [:post (str "https://formspree.io/" layout/email)]
-          (hidden-field "_subject" "seabears.net contact")
+          (hidden-field "_subject" "cberes.com contact")
           (text-field {:style "display:none;"} :_gotcha)
           [:table
             ; First and last name
