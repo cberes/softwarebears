@@ -9,7 +9,8 @@
                  [hiccup "1.0.5"]
                  [lib-noir "0.9.9"]
                  [markdown-clj "0.9.69"]
-                 [clj-rss "0.2.3"]]
+                 [clj-rss "0.2.3"]
+                 [javax.xml.bind/jaxb-api "2.2.11"]]
   :plugins [[lein-ring "0.9.6"]
             [lein-cljsbuild "1.1.0"]]
   :ring {:handler softwarebears.handler/app}
@@ -22,7 +23,6 @@
         :pretty-print false}}]}
   :hooks [leiningen.cljsbuild]
   :main ^:skip-aot softwarebears.generator
-  :jvm-opts ["--add-modules" "java.xml.bind"]
   :target-path "target/%s"
   :profiles {
     :uberjar {

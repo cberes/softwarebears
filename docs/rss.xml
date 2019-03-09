@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <rss version='2.0' xmlns:atom='http://www.w3.org/2005/Atom'>
 <channel>
-<atom:link href='http://seabears.net/rss.xml' rel='self' type='application/rss+xml'/>
+<atom:link href='http://cberes.com/rss.xml' rel='self' type='application/rss+xml'/>
 <title>
-SeaBears
+cberes
 </title>
 <link>
-http://seabears.net/rss.xml
+http://cberes.com/rss.xml
 </link>
 <lastBuildDate>
 Wed, 15 Feb 2017 17:40:00 -0500
@@ -22,7 +22,7 @@ clj-rss
 Common Clojure idioms
 </title>
 <link>
-http://seabears.net/blog/2017-02-15_common_clojure_idioms
+http://cberes.com/blog/2017-02-15_common_clojure_idioms
 </link>
 <guid isPermaLink='false'>
 2017-02-15_common_clojure_idioms
@@ -39,7 +39,7 @@ Wed, 15 Feb 2017 17:40:00 -0500
 How I converted this website to a static website
 </title>
 <link>
-http://seabears.net/blog/2017-02-14_static_website_conversion
+http://cberes.com/blog/2017-02-14_static_website_conversion
 </link>
 <guid isPermaLink='false'>
 2017-02-14_static_website_conversion
@@ -56,7 +56,7 @@ Tue, 14 Feb 2017 17:40:00 -0500
 JUnit tips
 </title>
 <link>
-http://seabears.net/blog/2015-11-30_junit_tips
+http://cberes.com/blog/2015-11-30_junit_tips
 </link>
 <guid isPermaLink='false'>
 2015-11-30_junit_tips
@@ -73,7 +73,7 @@ Mon, 30 Nov 2015 05:00:00 -0500
 Real-world tips for streams in Java 8
 </title>
 <link>
-http://seabears.net/blog/2015-10-20_how_to_use_streams_in_java_8
+http://cberes.com/blog/2015-10-20_how_to_use_streams_in_java_8
 </link>
 <guid isPermaLink='false'>
 2015-10-20_how_to_use_streams_in_java_8
@@ -90,7 +90,7 @@ Tue, 20 Oct 2015 06:00:00 -0400
 Making a bar chart of county names with Incanter
 </title>
 <link>
-http://seabears.net/blog/2015-10-10_bar_chart_with_incanter
+http://cberes.com/blog/2015-10-10_bar_chart_with_incanter
 </link>
 <guid isPermaLink='false'>
 2015-10-10_bar_chart_with_incanter
@@ -107,7 +107,7 @@ Sat, 10 Oct 2015 06:00:00 -0400
 Most popular county names in America
 </title>
 <link>
-http://seabears.net/blog/2015-08-31_counting_counties
+http://cberes.com/blog/2015-08-31_counting_counties
 </link>
 <guid isPermaLink='false'>
 2015-08-31_counting_counties
