@@ -14,9 +14,9 @@
         [:h3 "Add me to your contacts"]
         [:table
           [:tr
-            [:th "Email"] [:td (mail-to layout/email)]]
+            [:th [:i.fas.fa-envelope {:title "Email"}]] [:td (mail-to layout/email)]]
           [:tr
-            [:th "Telephone"] [:td (image {:class "bottom"} "/img/dial-now-light.png")]]]
+            [:th [:i.fas.fa-phone {:title "Telephone"}]] [:td (image {:class "bottom"} "/img/dial-now-light.png")]]]
         [:h3 "Or send a message right now"]
         [:p "Please use this form to introduce yourself and to tell me about your project. You can include any additional contact info in the message. Your message will be sent via " (link-to "https://formspree.io/" "Formspree") ". Then I'll get back to you shortly."]
         (form-to {:class "simple"} [:post (str "https://formspree.io/" layout/email)]

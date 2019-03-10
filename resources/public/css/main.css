@@ -566,6 +566,15 @@ content: "\2630";
 pre code {
 font-size: 90%;
 }
+footer i.fab {
+  padding-right: 1em;
+}
+footer i.fas {
+  padding-right: 0.75em;
+}
+footer a.social {
+  color: #FFFFFF;
+}
 /* small screens */
 @media screen and (max-width: 800px), screen and (max-device-width: 800px) {
   #show-nav {
