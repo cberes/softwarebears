@@ -1,5 +1,5 @@
 FROM java:8
-MAINTAINER Corey Beres <corey.beres@gmail.com>
+MAINTAINER Corey Beres <cberes@cberes.com>
 
 RUN apt-get update && apt-get install -y \
     wget \
@@ -13,7 +13,7 @@ ENV PORT=3000
 ENV SB_BLOG=/opt/softwarebears/blog
 ENV SB_EMAIL_HOST=smtp.zoho.com
 ENV SB_EMAIL_PORT=465
-ENV SB_EMAIL_USER=hello@softwarebears.com
+ENV SB_EMAIL_USER=cberes@cberes.com
 ENV SB_EMAIL_PASS=
 
 EXPOSE 80

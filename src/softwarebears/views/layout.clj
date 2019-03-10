@@ -5,7 +5,7 @@
 (def base-url (or (System/getenv "SB_BASEURL") ""))
 (def description (or (System/getenv "SB_DESCRIPTION") ""))
 (def title "cberes")
-(def email "corey.beres+www@gmail.com")
+(def email "cberes@cberes.com")
 (def year (.get (java.util.Calendar/getInstance) java.util.Calendar/YEAR))
 
 (defn common [& body]
