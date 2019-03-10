@@ -566,14 +566,17 @@ content: "\2630";
 pre code {
 font-size: 90%;
 }
-footer i.fab {
+footer.main i.fab {
   padding-right: 1em;
 }
-footer i.fas {
+footer.main i.fas {
   padding-right: 0.75em;
 }
-footer a.social {
+footer.main a.social {
   color: #FFFFFF;
+}
+footer.main p::first-line {
+  font-size: 1.25em;
 }
 /* small screens */
 @media screen and (max-width: 800px), screen and (max-device-width: 800px) {

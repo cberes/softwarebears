@@ -53,7 +53,7 @@
           [:li (link-to "/blog" "Blog")]
           [:li (link-to "/contact" "Contact")]]]
       body
-      [:footer.black
+      [:footer.main.black
         [:h2
           "Want to see more? View my "
           (link-to "/portfolio" "portfolio")
