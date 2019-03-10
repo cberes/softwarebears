@@ -19,6 +19,9 @@
       (include-js "/js/main.js")
       (include-js "/js/highlight.pack.js")
       (javascript-tag "hljs.configure({languages: []}); hljs.initHighlightingOnLoad();")
+      [:link {:rel "stylesheet" :href "//use.fontawesome.com/releases/v5.7.2/css/solid.css" :integrity "sha384-r/k8YTFqmlOaqRkZuSiE9trsrDXkh07mRaoGBMoDcmA58OHILZPsk29i2BsFng1B" :crossorigin "anonymous"}]
+      [:link {:rel "stylesheet" :href "//use.fontawesome.com/releases/v5.7.2/css/brands.css" :integrity "sha384-BKw0P+CQz9xmby+uplDwp82Py8x1xtYPK3ORn/ZSoe6Dk3ETP59WCDnX+fI1XCKK" :crossorigin "anonymous"}]
+      [:link {:rel "stylesheet" :href "//use.fontawesome.com/releases/v5.7.2/css/fontawesome.css" :integrity "sha384-4aon80D8rXCGx9ayDt85LbyUHeMWd3UiBaWliBlJ53yzm9hqN21A+o1pqoyK04h+" :crossorigin "anonymous"}]
       [:link {:rel "alternate" :type "application/rss+xml" :href "/rss.xml"}]
       [:link {:rel "apple-touch-icon" :sizes "57x57" :href "/apple-icon-57x57.png"}]
       [:link {:rel "apple-touch-icon" :sizes "60x60" :href "/apple-icon-60x60.png"}]
@@ -65,12 +68,11 @@
           "SOA, web services, Android apps &amp; SDKs," [:br]
           "web applications, and database design"]
         [:p
-          "Email: " (mail-to email) [:br]
-          "Tel: " (image {:class "bottom"} "/img/dial-now-dark.png") [:br]
-          "Find us on "
-          (link-to "https://github.com/cberes" "GitHub") ", "
-          (link-to "https://instagram.com/coreyberes" "Instagram") ", "
-          (link-to "https://www.twitch.tv/cberes" "Twitch") ", &amp; "
-          (link-to "https://twitter.com/_cberes" "Twitter") [:br]
+          (link-to "https://github.com/cberes" [:i.fab.fa-github {:title "GitHub"}])
+          (link-to "https://instagram.com/coreyberes" [:i.fab.fa-instagram {:title "Instagram"}])
+          (link-to "https://www.twitch.tv/cberes" [:i.fab.fa-twitch {:title "Twitch"}])
+          (link-to "https://twitter.com/_cberes" [:i.fab.fa-twitter {:title "Twitter"}]) [:br]
+          [:i.fas.fa-envelope {:title "Email"}] (mail-to email) [:br]
+          [:i.fas.fa-phone {:title "Telephone"}] (image {:class "bottom"} "/img/dial-now-dark.png") [:br]
           "&copy; 2015-" year " " [:span.name [:span "c"] [:span "beres"]]]
         [:div.clear]]]))
