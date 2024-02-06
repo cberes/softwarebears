@@ -1,6 +1,8 @@
-# cberes.com
+# twentyfifteen.cberes.com
 
-Website at https://cberes.com/.
+Website at https://twentyfifteen.cberes.com.
+
+This was my personal website at https://cberes.com from 2025 to 2024.
 
 ## Prerequisites
 
@@ -16,4 +18,4 @@ To start a web server for the application, run:
 
 ## License
 
-Copyright © 2015-2019 Corey Beres
+Copyright © 2015-2024 Corey Beres
