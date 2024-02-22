@@ -69,10 +69,9 @@
           "web applications, and database design"]
         [:p
           (link-to {:class "social"} "https://github.com/cberes" [:i.fab.fa-github {:title "GitHub"}])
-          (link-to {:class "social"} "https://instagram.com/coreyberes" [:i.fab.fa-instagram {:title "Instagram"}])
-          (link-to {:class "social"} "https://www.twitch.tv/cberes" [:i.fab.fa-twitch {:title "Twitch"}])
-          (link-to {:class "social"} "https://twitter.com/_cberes" [:i.fab.fa-twitter {:title "Twitter"}]) [:br]
-          [:i.fas.fa-envelope {:title "Email"}] (mail-to email) [:br]
-          [:i.fas.fa-phone {:title "Telephone"}] (image {:class "bottom"} "/img/dial-now-dark.png") [:br]
+          (link-to {:class "social"} "https://www.linkedin.com/in/coreyberes/" [:i.fab.fa-linkedin {:title "LinkedIn"}])
+          (link-to {:class "social"} "https://www.youtube.com/c/coreyberes" [:i.fab.fa-youtube {:title "YouTube"}]) [:br]
+          [:i.fas.fa-envelope {:title "Email"}] "Email me" [:br]
+          [:i.fas.fa-phone {:title "Telephone"}] "Or call me" [:br]
           "&copy; 2015-" year " " [:span.name [:span "c"] [:span "beres"]]]
         [:div.clear]]]))
