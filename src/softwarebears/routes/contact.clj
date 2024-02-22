@@ -11,6 +11,7 @@
     [:main
       [:section.colory.white
         [:h2 "Contact"]
+        [:h3 "How to reach me"]
         [:p
           "You can find me on "
           (link-to "https://www.linkedin.com/in/coreyberes/" "LinkedIn")
