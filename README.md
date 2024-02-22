@@ -2,7 +2,7 @@
 
 Website at https://twentyfifteen.cberes.com.
 
-This was my personal website at https://cberes.com from 2025 to 2024.
+This was my personal website at https://cberes.com from 2015 to 2024.
 
 ## Prerequisites
 
