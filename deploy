@@ -16,7 +16,6 @@ deploy() {
 	java -jar target/uberjar/softwarebears-*-standalone.jar $1
 	cp -r resources/public/* $1
 	cp -r $SB_BLOG/img/ $1
-	echo -n $domain > "$1/CNAME"
 }
 
-deploy docs/
+deploy $1

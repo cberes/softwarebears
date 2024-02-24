@@ -1,6 +1,6 @@
 (defproject softwarebears "1.0.0-SNAPSHOT"
   :description "cberes.com website"
-  :url "https://cberes.com"
+  :url "https://twentyfifteen.cberes.com"
   :min-lein-version "2.0.0"
   :dependencies [[org.clojure/clojure "1.7.0"]
                  [org.clojure/clojurescript "1.7.48"]
