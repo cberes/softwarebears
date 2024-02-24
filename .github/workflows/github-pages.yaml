@@ -33,7 +33,7 @@ jobs:
         run: ./deploy _site/
 
       - name: Upload GitHub Pages artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v3
 
 
   deploy:
