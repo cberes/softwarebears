@@ -1,12 +1,18 @@
 #!/usr/bin/env bash
 
 readonly domain=twentyfifteen.cberes.com
+project_root="$GITHUB_WORKSPACE"
+if [ -z "$project_root" ]; then
+	project_root="$(git rev-parse --show-toplevel)"
+fi
+
 export SB_BASEURL="https://$domain"
-export SB_BLOG="$(pwd)/../softwarebears-blog/"
+export SB_BLOG="$project_root/blog/"
 export SB_DESCRIPTION="Writing about technology from an engineer's point of view."
 
 deploy() {
 	lein uberjar
+	mkdir $1
 	java -jar target/uberjar/softwarebears-*-standalone.jar $1
 	cp -r resources/public/* $1
 	cp -r $SB_BLOG/img/ $1
@@ -14,4 +20,3 @@ deploy() {
 }
 
 deploy docs/
-
