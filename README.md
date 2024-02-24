@@ -16,6 +16,13 @@ To start a web server for the application, run:
 
     lein ring server
 
+## Building
+
+To build the static version of this site, run:
+
+    ./deploy docs/
+
+
 ## License
 
 Copyright © 2015-2024 Corey Beres
